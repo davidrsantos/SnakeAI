@@ -114,7 +114,7 @@ public class SnakeExperimentsFactory extends ExperimentsFactory {
         }
         return null;
     }
-
+//todo qualquercoisa
     private String buildTextualExperiment() {
         StringBuilder sb = new StringBuilder();
         sb.append("Population size:" + populationSize + "\t");
