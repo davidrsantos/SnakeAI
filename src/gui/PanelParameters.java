@@ -25,6 +25,10 @@ public class PanelParameters extends PanelAtributesValue {
     public static final String PROB_RECOMBINATION = "0.7";
     public static final String PROB_MUTATION = "0.7";
 
+    //para a combobox
+    String[] problems = {"AI1", "..."};//falta cobras
+    JComboBox comboBoxProblems = new JComboBox(problems);
+
     JTextField textFieldSeed = new JTextField(SEED, TEXT_FIELD_LENGHT);
     JTextField textFieldN = new JTextField(POPULATION_SIZE, TEXT_FIELD_LENGHT);
     JTextField textFieldGenerations = new JTextField(GENERATIONS, TEXT_FIELD_LENGHT);
@@ -56,6 +60,10 @@ public class PanelParameters extends PanelAtributesValue {
         valueComponents.add(comboBoxSelectionMethods);
         comboBoxSelectionMethods.addActionListener(new JComboBoxSelectionMethods_ActionAdapter(this));
 
+        labels.add(new JLabel("Problems: "));
+        valueComponents.add(comboBoxProblems);
+        comboBoxProblems.addActionListener(new JComboBoxProblems_ActionAdapter(this));
+
         labels.add(new JLabel("Tournament size: "));
         valueComponents.add(textFieldTournamentSize);
         textFieldTournamentSize.addKeyListener(new IntegerTextField_KeyAdapter(null));
@@ -77,6 +85,9 @@ public class PanelParameters extends PanelAtributesValue {
         textFieldTournamentSize.setEnabled(comboBoxSelectionMethods.getSelectedIndex() == 0);
     }
 
+    public void actionPerformedProblems(ActionEvent e) {
+        textFieldTournamentSize.setEnabled(comboBoxProblems.getSelectedIndex() == 0);
+    }
 
     public SelectionMethod<SnakeIndividual, SnakeProblem> getSelectionMethod() {
         switch (comboBoxSelectionMethods.getSelectedIndex()) {
@@ -125,6 +136,20 @@ class JComboBoxSelectionMethods_ActionAdapter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         adaptee.actionPerformedSelectionMethods(e);
+    }
+}
+
+class JComboBoxProblems_ActionAdapter implements ActionListener {
+
+    final private PanelParameters adaptee;
+
+    JComboBoxProblems_ActionAdapter(PanelParameters adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        adaptee.actionPerformedProblems(e);
     }
 }
 
