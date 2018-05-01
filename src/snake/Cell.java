@@ -8,6 +8,7 @@ public class Cell {
     private final int line, column;
     private SnakeAgent agent;
     private Food food;
+    private Tail tail;
 
     public Cell(int line, int column) {
         this.line = line;
@@ -42,15 +43,25 @@ public class Cell {
         this.food = food;
     }
 
-    public boolean hastFood() {
+    public boolean hasFood() {
         return food != null;
+    }
+
+    public void setTail(Tail tail) {
+        this.tail = tail;
+    }
+
+    public boolean hasTail() {
+        return tail != null;
     }
 
     public Color getColor() {
         if (hasAgent()) {
             return agent.getColor();
-        } else if (hastFood()) {
+        } else if (hasFood()) {
             return food.getColor();
+        } else if (hasTail()) {
+            return tail.getColor();
         } else {
             return Cell.COLOR;
         }

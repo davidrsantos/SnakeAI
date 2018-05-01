@@ -1,17 +1,14 @@
 package snake.snakeRandom;
 
-import snake.Action;
-import snake.Cell;
-import snake.Perception;
-import snake.SnakeAgent;
+import snake.*;
 
 import java.awt.*;
 
 public class SnakeRandomAgent extends SnakeAgent {
     // TODO
 
-    public SnakeRandomAgent(Cell cell, Color color) {
-        super(cell, color);
+    public SnakeRandomAgent(Cell cell, Color color, Environment environment) {
+        super(cell, color, environment);
     }
 
     @Override

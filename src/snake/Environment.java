@@ -18,10 +18,10 @@ public class Environment {
     public Random random;
     private Food food;
     private int tipo;
-
+    private boolean stop;
     public Environment(
             int size,
-            int maxIterations, int tipo) {
+            int maxIterations /*int tipo*/) {
 
         this.maxIterations = maxIterations;
         this.tipo = tipo;
@@ -45,15 +45,16 @@ public class Environment {
 
     // TODO MODIFY TO PLACE ADHOC OR AI SNAKE AGENTS
     private void placeAgents(int tipo) {
-        switch (tipo) {
+        switch (2) {
 
 
             case 1:
-                SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
+                SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
                 agents.add(snakeRandomAgent);
                 break;
             case 2:
-                SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
+                SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
+                agents.add(snakeAdhocAgent);
                 break;
             case 3:
                 // SnakeAgent snakeAIAgent = new SnakeAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
@@ -66,6 +67,9 @@ public class Environment {
         Food food = new Food(getCell(random.nextInt(grid.length), random.nextInt(grid.length)));
     }
 
+    public Food getFood() {
+        return food;
+    }
     public void simulate() {
         for (int i = 0; i < maxIterations; i++) {
             System.out.println(i + 1);
@@ -124,6 +128,15 @@ public class Environment {
     public Color getCellColor(int linha, int coluna) {
         return grid[linha][coluna].getColor();
     }
+
+    public boolean isStop() {
+        return stop;
+    }
+
+    public void setStop(boolean stop) {
+        this.stop = stop;
+    }
+
 
     public synchronized void addEnvironmentListener(EnvironmentListener l) {
         if (!listeners.contains(l)) {

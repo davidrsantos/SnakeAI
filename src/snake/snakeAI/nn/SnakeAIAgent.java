@@ -1,9 +1,6 @@
 package snake.snakeAI.nn;
 
-import snake.Action;
-import snake.Cell;
-import snake.Perception;
-import snake.SnakeAgent;
+import snake.*;
 
 import java.awt.*;
 
@@ -38,8 +35,8 @@ public class SnakeAIAgent extends SnakeAgent {
             Cell cell,
             int inputLayerSize,
             int hiddenLayerSize,
-            int outputLayerSize) {
-        super(cell, Color.BLUE);
+            int outputLayerSize, Environment environment) {
+        super(cell, Color.BLUE, environment);
         this.inputLayerSize = inputLayerSize;
         this.hiddenLayerSize = hiddenLayerSize;
         this.outputLayerSize = outputLayerSize;
