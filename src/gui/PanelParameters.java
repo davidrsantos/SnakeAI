@@ -26,8 +26,8 @@ public class PanelParameters extends PanelAtributesValue {
     public static final String PROB_MUTATION = "0.7";
 
     //para a combobox
-    String[] problems = {"AI1", "..."};//falta cobras
-    JComboBox comboBoxProblems = new JComboBox(problems);
+    String[] selectionProblems = {"Snake Random", "Snake AdHoc", "outras"};//TODO faltam os resto dos algoritmos
+    JComboBox comboBoxSelectionProblems = new JComboBox(selectionProblems);
 
     JTextField textFieldSeed = new JTextField(SEED, TEXT_FIELD_LENGHT);
     JTextField textFieldN = new JTextField(POPULATION_SIZE, TEXT_FIELD_LENGHT);
@@ -42,6 +42,7 @@ public class PanelParameters extends PanelAtributesValue {
     //TODO - MORE PARAMETERS?
 
     public PanelParameters() {
+
         title = "Genetic algorithm parameters";
 
         labels.add(new JLabel("Seed: "));
@@ -61,8 +62,8 @@ public class PanelParameters extends PanelAtributesValue {
         comboBoxSelectionMethods.addActionListener(new JComboBoxSelectionMethods_ActionAdapter(this));
 
         labels.add(new JLabel("Problems: "));
-        valueComponents.add(comboBoxProblems);
-        comboBoxProblems.addActionListener(new JComboBoxProblems_ActionAdapter(this));
+        valueComponents.add(comboBoxSelectionProblems);
+        comboBoxSelectionProblems.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
 
         labels.add(new JLabel("Tournament size: "));
         valueComponents.add(textFieldTournamentSize);
@@ -85,8 +86,8 @@ public class PanelParameters extends PanelAtributesValue {
         textFieldTournamentSize.setEnabled(comboBoxSelectionMethods.getSelectedIndex() == 0);
     }
 
-    public void actionPerformedProblems(ActionEvent e) {
-        textFieldTournamentSize.setEnabled(comboBoxProblems.getSelectedIndex() == 0);
+    public void actionPerformedSelectionProblems(ActionEvent e) {
+        // TODO dar-lhe alguma coisa para a combobox fazer se preciso
     }
 
     public SelectionMethod<SnakeIndividual, SnakeProblem> getSelectionMethod() {
@@ -139,17 +140,17 @@ class JComboBoxSelectionMethods_ActionAdapter implements ActionListener {
     }
 }
 
-class JComboBoxProblems_ActionAdapter implements ActionListener {
+class JComboBoxSelectionProblems_ActionAdapter implements ActionListener {
 
     final private PanelParameters adaptee;
 
-    JComboBoxProblems_ActionAdapter(PanelParameters adaptee) {
+    JComboBoxSelectionProblems_ActionAdapter(PanelParameters adaptee) {
         this.adaptee = adaptee;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        adaptee.actionPerformedProblems(e);
+        adaptee.actionPerformedSelectionProblems(e);
     }
 }
 

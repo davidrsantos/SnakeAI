@@ -21,7 +21,7 @@ public class Environment {
     private boolean stop;
     public Environment(
             int size,
-            int maxIterations /*int tipo*/) {
+            int maxIterations) {
 
         this.maxIterations = maxIterations;
         this.tipo = tipo;
@@ -46,7 +46,6 @@ public class Environment {
     // TODO MODIFY TO PLACE ADHOC OR AI SNAKE AGENTS
     private void placeAgents(int tipo) {
         switch (2) {
-
 
             case 1:
                 SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
@@ -152,5 +151,9 @@ public class Environment {
         for (EnvironmentListener listener : listeners) {
             listener.environmentUpdated();
         }
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 }
