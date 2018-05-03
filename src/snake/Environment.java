@@ -1,7 +1,6 @@
 package snake;
 
 import snake.snakeAdhoc.SnakeAdhocAgent;
-import snake.snakeRandom.SnakeRandomAgent;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -48,8 +47,8 @@ public class Environment {
         switch (2) {
 
             case 1:
-                SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
-                agents.add(snakeRandomAgent);
+                //   SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
+                //   agents.add(snakeRandomAgent);
                 break;
             case 2:
                 SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
