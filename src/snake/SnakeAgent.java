@@ -49,7 +49,7 @@ public abstract class SnakeAgent {
         } else if (action == Action.EAST && cell.getColumn() != environment.getNumColumns() - 1) {
             nextCell = environment.getEastCell(cell);
         }
-        if (nextCell != null) {
+        if (nextCell != null&& !nextCell.hasAgent() && !nextCell.hasTail() ) {
             if (nextCell.hasFood()) {
                 Tail tail = new Tail(cell);
                 tails.addFirst(tail);
@@ -62,7 +62,8 @@ public abstract class SnakeAgent {
                 }
             }
             setCell(nextCell);
-        }
+        }else
+
         environment.setStop(true);
 
     }
@@ -82,9 +83,21 @@ public abstract class SnakeAgent {
         if (newCell != null) {
             newCell.setAgent(this);
         }
+        if (cell.hasFood()) {
+            cell.setFood(null);
+            environment.placeFood();
+
+        }
     }
 
     public Color getColor() {
         return color;
+    }
+
+    public void limparTails() {
+        for (Tail t: tails){
+            t.getCell().setTail(null);
+        }
+        tails.clear();
     }
 }

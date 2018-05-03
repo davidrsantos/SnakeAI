@@ -25,7 +25,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
             int environmentSize,
             int maxIterations,
             int numHiddenUnits,
-            int numEnvironmentRuns) {
+            int numEnvironmentRuns, int tipo) {
         this.environmentSize = environmentSize;
         this.maxIterations = maxIterations;
         this.numInputs = NUM_NN_INPUTS;
@@ -36,11 +36,11 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
         //TODO falta a parte do tipo que vem da combobox
         environment = new Environment(
                 environmentSize,
-                maxIterations);
+                maxIterations, tipo);
     }
 
     // MODIFY IF YOU DEFINE OTHER PARAMETERS
-    public static SnakeProblem buildProblemFromFile(File file) throws IOException {
+    public static SnakeProblem buildProblemFromFile(File file, int tipo) throws IOException {
         java.util.Scanner f = new java.util.Scanner(file);
 
         List<String> lines = new LinkedList<>();
@@ -67,7 +67,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
                 environmentSize,
                 maxIterations,
                 numHiddenUnits,
-                numEnvironmentRuns);
+                numEnvironmentRuns, tipo);
     }
 
     @Override

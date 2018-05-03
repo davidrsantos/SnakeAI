@@ -32,7 +32,7 @@ public class MainFrame extends JFrame implements GAListener {
     private SnakeExperimentsFactory experimentsFactory;
     private PanelTextArea problemPanel;
     private PanelTextArea bestIndividualPanel;
-    private PanelParameters panelParameters = new PanelParameters();
+    private PanelParameters panelParameters = new PanelParameters(this);
     private JButton buttonDataSet = new JButton("Data set");
     private JButton buttonRun = new JButton("Run");
     private JButton buttonStop = new JButton("Stop");
@@ -42,6 +42,11 @@ public class MainFrame extends JFrame implements GAListener {
     private XYSeries seriesBestIndividual;
     private XYSeries seriesAverage;
     private SwingWorker<Void, Void> worker;
+    private int tipo;
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
 
     private PanelSimulation simulationPanel;
 
@@ -158,7 +163,7 @@ public class MainFrame extends JFrame implements GAListener {
         try {
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File dataSet = fc.getSelectedFile();
-                problem = SnakeProblem.buildProblemFromFile(dataSet);
+                problem = SnakeProblem.buildProblemFromFile(dataSet, tipo);
                 problemPanel.textArea.setText(problem.toString());
                 problemPanel.textArea.setCaretPosition(0);
                 buttonRun.setEnabled(true);
@@ -269,7 +274,7 @@ public class MainFrame extends JFrame implements GAListener {
                     while (experimentsFactory.hasMoreExperiments()) {
                         try {
 
-                            Experiment experiment = experimentsFactory.nextExperiment();
+                            Experiment experiment = experimentsFactory.nextExperiment(tipo);
                             experiment.run();
 
                         } catch (IOException e1) {

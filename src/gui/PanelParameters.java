@@ -39,10 +39,11 @@ public class PanelParameters extends PanelAtributesValue {
     JComboBox comboBoxRecombinationMethods = new JComboBox(recombinationMethods);
     JTextField textFieldProbRecombination = new JTextField(PROB_RECOMBINATION, TEXT_FIELD_LENGHT);
     JTextField textFieldProbMutation = new JTextField(PROB_MUTATION, TEXT_FIELD_LENGHT);
+    private MainFrame mainFrame;
     //TODO - MORE PARAMETERS?
 
-    public PanelParameters() {
-
+    public PanelParameters(MainFrame mainFrame) {
+        this.mainFrame=mainFrame;
         title = "Genetic algorithm parameters";
 
         labels.add(new JLabel("Seed: "));
@@ -87,8 +88,9 @@ public class PanelParameters extends PanelAtributesValue {
     }
 
     public void actionPerformedSelectionProblems(ActionEvent e) {
-        // TODO dar-lhe alguma coisa para a combobox fazer se preciso
+       mainFrame.setTipo(comboBoxSelectionProblems.getSelectedIndex());
     }
+
 
     public SelectionMethod<SnakeIndividual, SnakeProblem> getSelectionMethod() {
         switch (comboBoxSelectionMethods.getSelectedIndex()) {

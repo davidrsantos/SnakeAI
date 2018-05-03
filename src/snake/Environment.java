@@ -1,6 +1,7 @@
 package snake;
 
 import snake.snakeAdhoc.SnakeAdhocAgent;
+import snake.snakeRandom.SnakeRandomAgent;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Environment {
     private boolean stop;
     public Environment(
             int size,
-            int maxIterations) {
+            int maxIterations, int tipo) {
 
         this.maxIterations = maxIterations;
         this.tipo = tipo;
@@ -38,38 +39,57 @@ public class Environment {
     public void initialize(int seed) {
         random.setSeed(seed);
 
-        placeAgents(this.tipo);
+        for (SnakeAgent snakeAgent : agents) {
+            snakeAgent.getCell().setAgent(null);
+            snakeAgent.limparTails();
+
+        }
+        agents.clear();
+
+        if (food != null){
+            food.getCell().setFood(null);
+            food = null;
+    }
+        placeAgents();
         placeFood();
     }
 
     // TODO MODIFY TO PLACE ADHOC OR AI SNAKE AGENTS
-    private void placeAgents(int tipo) {
-        switch (2) {
+    private void placeAgents() {
+        switch (tipo) {
 
-            case 1:
-                //   SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
-                //   agents.add(snakeRandomAgent);
+            case 0:
+                   SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
+                   agents.add(snakeRandomAgent);
                 break;
-            case 2:
+            case 1:
                 SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
                 agents.add(snakeAdhocAgent);
                 break;
-            case 3:
+            case 2:
                 // SnakeAgent snakeAIAgent = new SnakeAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
                 break;
         }
     }
 
-    private void placeFood() {
-        //TODO   /*if(só se não houver agente)*/
-        Food food = new Food(getCell(random.nextInt(grid.length), random.nextInt(grid.length)));
+    public void placeFood() {
+        int l,c;
+        Cell cell;
+        do {
+            l=random.nextInt(grid.length);
+            c=random.nextInt(grid.length);
+            cell=getCell(l,c);
+        }while (cell.hasAgent() || cell.hasTail());
+
+        food = new Food(cell);
     }
 
     public Food getFood() {
         return food;
     }
     public void simulate() {
-        for (int i = 0; i < maxIterations; i++) {
+        stop=false;
+        for (int i = 0; i < maxIterations && !stop; i++) {
             System.out.println(i + 1);
 
             for (SnakeAgent agent : agents) {
@@ -155,4 +175,6 @@ public class Environment {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+
+
 }
