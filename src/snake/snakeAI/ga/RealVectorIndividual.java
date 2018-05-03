@@ -5,7 +5,7 @@ public abstract class RealVectorIndividual<P extends Problem, I extends RealVect
 
     public RealVectorIndividual(P problem, int size) {
         super(problem);
-        // TODO
+        // TODO este muda referente a ficha o genoma é constituido por pesos, na ficha é 01
     }
 
     public RealVectorIndividual(RealVectorIndividual<P, I> original) {

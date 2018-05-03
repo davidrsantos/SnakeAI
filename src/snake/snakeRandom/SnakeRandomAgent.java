@@ -15,8 +15,8 @@ public class SnakeRandomAgent extends SnakeAgent {
 
     @Override
     protected Action decide(Perception perception) {
-        Random random =  new Random(1);
-        //random.nextInt() ;
+        Random random =  new Random();
+
         switch(random.nextInt(4)) {
             case 0:
                 if (perception.getN() != null && !perception.getN().hasAgent() && !perception.getN().hasTail()) {
