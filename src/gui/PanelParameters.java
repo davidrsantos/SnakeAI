@@ -61,7 +61,7 @@ public class PanelParameters extends PanelAtributesValue {
         valueComponents.add(comboBoxSelectionMethods);
         comboBoxSelectionMethods.addActionListener(new JComboBoxSelectionMethods_ActionAdapter(this));
 
-        labels.add(new JLabel("Problems: "));
+        labels.add(new JLabel("Problem: "));
         valueComponents.add(comboBoxSelectionProblems);
         comboBoxSelectionProblems.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
 
