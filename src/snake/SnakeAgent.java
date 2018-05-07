@@ -38,7 +38,7 @@ public abstract class SnakeAgent {
 
     protected void execute(Action action, Environment environment) {
 
-        // TODO
+
         Cell nextCell = null;
         if (action == Action.NORTH && cell.getLine() != 0) {
             nextCell = environment.getNorthCell(cell);

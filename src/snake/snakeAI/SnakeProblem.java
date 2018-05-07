@@ -33,7 +33,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
         this.numOutputs = NUM_NN_OUTPUTS;
         this.numEnvironmentRuns = numEnvironmentRuns;
 
-        //TODO falta a parte do tipo que vem da combobox
+
         environment = new Environment(
                 environmentSize,
                 maxIterations, tipo);

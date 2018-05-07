@@ -54,7 +54,6 @@ public class Environment {
         placeFood();
     }
 
-    // TODO MODIFY TO PLACE ADHOC OR AI SNAKE AGENTS
     private void placeAgents() {
         switch (tipo) {
 
@@ -67,6 +66,7 @@ public class Environment {
                 agents.add(snakeAdhocAgent);
                 break;
             case 2:
+                //TODO não esquecer de ativar a  snake IA
                 // SnakeAgent snakeAIAgent = new SnakeAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
                 break;
         }
