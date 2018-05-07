@@ -69,7 +69,7 @@ public class SnakeAIAgent extends SnakeAgent {
         for (int i = 0; i < hiddenLayerSize; i++) { //ou w1[0].length
             sum = 0;
             for (int j = 0; j < inputLayerSize; j++) { //ou instance.length
-              // todo erro  sum += instance[j] * w1[j][i];
+              sum += inputs[j] * w1[j][i]; //TODO coloquei os inputs Luana
             }
             //aplicar a função sigmoide a hiddenLayerOutput[i] (função de ativação)
             hiddenLayerOutput[i] = 1 / (1 + Math.exp(-sum)); //ou Math.pow(Math.E, -sum)
@@ -81,7 +81,7 @@ public class SnakeAIAgent extends SnakeAgent {
                 sum += hiddenLayerOutput[j] * w2[j][i];
             }
             //aplicar a função sigmoide a outputLayerOutput[i]
-          //todo erro  outputLayerOutput[i] = 1 / (1 + Math.exp(-sum));
+          output[i] = 1 / (1 + Math.exp(-sum));
         }
 
        //todo erro return outputLayerOutput;

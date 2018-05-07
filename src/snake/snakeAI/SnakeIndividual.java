@@ -26,6 +26,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     }
 
     @Override
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nfitness: ");
