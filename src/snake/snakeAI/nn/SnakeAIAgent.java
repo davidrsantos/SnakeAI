@@ -81,7 +81,7 @@ public class SnakeAIAgent extends SnakeAgent {
                 sum += hiddenLayerOutput[j] * w2[j][i];
             }
             //aplicar a função sigmoide a outputLayerOutput[i]
-          output[i] = 1 / (1 + Math.exp(-sum));
+          //TODO ERRO output[i] = 1 / (1 + Math.exp(-sum));
         }
 
        //todo erro return outputLayerOutput;
