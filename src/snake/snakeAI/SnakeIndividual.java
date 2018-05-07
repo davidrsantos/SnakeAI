@@ -17,6 +17,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     @Override
     public double computeFitness() {
         int numeroSimulacoes = problem.getNumEvironmentSimulations(); //todo é para começar por aqui
+      //todo call setWeitghs
         return 0;
     }
 

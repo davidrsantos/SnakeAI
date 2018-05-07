@@ -17,11 +17,11 @@ public class MutationMUTATION_NAME<I extends RealVectorIndividual> extends Mutat
         // TODO
         for (int i = 0; i < ind.getNumGenes(); i++) {
             if (GeneticAlgorithm.random.nextDouble()<probability){
-                if(ind.getGene(i) != I.ONE) {
-                    ind.setGene(i, ind.getGene(i));
+
+                    ind.setGene(i, GeneticAlgorithm.random.nextDouble()*2-1);
                 }
             }
-        }
+
     }
 
     @Override

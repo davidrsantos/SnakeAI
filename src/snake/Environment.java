@@ -1,5 +1,6 @@
 package snake;
 
+import snake.snakeAI.nn.SnakeAIAgent;
 import snake.snakeAdhoc.SnakeAdhocAgent;
 import snake.snakeRandom.SnakeRandomAgent;
 
@@ -50,6 +51,7 @@ public class Environment {
             food.getCell().setFood(null);
             food = null;
     }
+
         placeAgents();
         placeFood();
 

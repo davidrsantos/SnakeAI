@@ -56,22 +56,24 @@ public class SnakeAIAgent extends SnakeAgent {
      * @param weights vector of weights comming from the individual.
      */
     public void setWeights(double[] weights) {
-
+        int x = 0;
         for (int i = 0; i < w1.length; i++) { //em vez de w1.length pode ser inputLayerSize
             for (int j = 0; j < w1[i].length; j++) { //em de w1[i].lenght pode ser w1[0].length ou hiddenLayerSize
-                for (int h = 0;h < weights.length; h++) {
-                    this.w1[i][j] = weights[h];
-                }
+
+                this.w1[i][j] = weights[x];
+                x++;
             }
         }
+
 
         for (int i = 0; i < w2.length; i++) { //ou hiddenLayerSize+1
             for (int j = 0; j < w2[i].length; j++) {
-                for (int h = 0; h < weights.length; h++) {
-                    this.w2[i][j] = weights[h];
-                }
+
+                this.w2[i][j] = weights[x];
+                x++;
             }
         }
+
     }
 
     /**
@@ -84,7 +86,7 @@ public class SnakeAIAgent extends SnakeAgent {
         for (int i = 0; i < hiddenLayerSize; i++) { //ou w1[0].length
             sum = 0;
             for (int j = 0; j < inputLayerSize; j++) { //ou instance.length
-              sum += inputs[j] * w1[j][i]; //TODO coloquei os inputs Luana
+                sum += inputs[j] * w1[j][i]; //TODO coloquei os inputs Luana
             }
             //aplicar a função sigmoide a hiddenLayerOutput[i] (função de ativação)
             hiddenLayerOutput[i] = 1 / (1 + Math.exp(-sum)); //ou Math.pow(Math.E, -sum)
@@ -96,10 +98,10 @@ public class SnakeAIAgent extends SnakeAgent {
                 sum += hiddenLayerOutput[j] * w2[j][i];
             }
             //aplicar a função sigmoide a outputLayerOutput[i]
-          //TODO ERRO output[i] = 1 / (1 + Math.exp(-sum));
+            //TODO ERRO output[i] = 0ou1 temos de dedicder como vamos escolher os outputs conforme o que a sum nos dá
         }
 
-       //todo erro return outputLayerOutput;
+        //todo erro return outputLayerOutput;
     }
 
     @Override
