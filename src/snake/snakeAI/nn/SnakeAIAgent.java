@@ -56,7 +56,22 @@ public class SnakeAIAgent extends SnakeAgent {
      * @param weights vector of weights comming from the individual.
      */
     public void setWeights(double[] weights) {
-        // TODO
+
+        for (int i = 0; i < w1.length; i++) { //em vez de w1.length pode ser inputLayerSize
+            for (int j = 0; j < w1[i].length; j++) { //em de w1[i].lenght pode ser w1[0].length ou hiddenLayerSize
+                for (int h = 0;h < weights.length; h++) {
+                    this.w1[i][j] = weights[h];
+                }
+            }
+        }
+
+        for (int i = 0; i < w2.length; i++) { //ou hiddenLayerSize+1
+            for (int j = 0; j < w2[i].length; j++) {
+                for (int h = 0; h < weights.length; h++) {
+                    this.w2[i][j] = weights[h];
+                }
+            }
+        }
     }
 
     /**

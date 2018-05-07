@@ -3,8 +3,8 @@ package snake.snakeAI.ga;
 public abstract class RealVectorIndividual<P extends Problem, I extends RealVectorIndividual> extends Individual<P, I> {
     // TODO verificar
 
-    public static final double ONE = 1; // TODO tem de se decidir para que valor é true e para que valor é false
-    public static final double NONE= -1;
+ //   public static final double ONE = 1; // TODO tem de se decidir para que valor é true e para que valor é false
+  //  public static final double NONE= -1;
 
     protected double[] genome;
 
@@ -14,8 +14,8 @@ public abstract class RealVectorIndividual<P extends Problem, I extends RealVect
         genome = new double[size];
         for (int g = 0; g < genome.length; g++) {
             //todo aplicar abaixo mas em real!!!
-            if (GeneticAlgorithm.random.nextDouble() < 0) genome[g] = ONE; //todo é isto? //se form maior que 0 dá 1 se for menor dá -1
-            else genome[g] = NONE;
+            genome[g]= 2 * GeneticAlgorithm.random.nextDouble() - 1; // todo estamos a preencher o vetor com valores entre -1 e 1
+
         }
     }
 

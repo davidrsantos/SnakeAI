@@ -52,6 +52,7 @@ public class Environment {
     }
         placeAgents();
         placeFood();
+
     }
 
     private void placeAgents() {
