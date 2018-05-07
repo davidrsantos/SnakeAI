@@ -16,13 +16,13 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
 
     @Override
     public double computeFitness() {
-        //TODO
+        int numeroSimulacoes = problem.getNumEvironmentSimulations(); //todo é para começar por aqui
         return 0;
     }
 
     public double[] getGenome() {
-        //TODO
-        return null;
+
+        return super.genome; //todo verificar
     }
 
     @Override

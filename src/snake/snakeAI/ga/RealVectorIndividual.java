@@ -3,25 +3,26 @@ package snake.snakeAI.ga;
 public abstract class RealVectorIndividual<P extends Problem, I extends RealVectorIndividual> extends Individual<P, I> {
     // TODO verificar
 
-   // public static final boolean ONE = true; TODO tem de se decidir para que valor é true e para que valor é false
-   // public static final boolean ZERO = false;
+    public static final double ONE = 1; // TODO tem de se decidir para que valor é true e para que valor é false
+    public static final double NONE= -1;
 
-    protected float[] genome;
+    protected double[] genome;
 
     public RealVectorIndividual(P problem, int size) {
         super(problem);
         // TODO este muda referente a ficha o genoma é constituido por pesos, na ficha é 01has
-        genome = new float[size];
+        genome = new double[size];
         for (int g = 0; g < genome.length; g++) {
             //todo aplicar abaixo mas em real!!!
-          //  genome[g] = (GeneticAlgorithm.random.nextDouble() < prob1s) ? ONE : ZERO;
+            if (GeneticAlgorithm.random.nextDouble() < 0) genome[g] = ONE; //todo é isto? //se form maior que 0 dá 1 se for menor dá -1
+            else genome[g] = NONE;
         }
     }
 
     public RealVectorIndividual(RealVectorIndividual<P, I> original) {
         super(original);
         // TODO verificar
-        this.genome = new float[original.genome.length];
+        this.genome = new double[original.genome.length];
         System.arraycopy(original.genome, 0, genome, 0, genome.length);
     }
 
@@ -37,11 +38,15 @@ public abstract class RealVectorIndividual<P extends Problem, I extends RealVect
     }
 
     public void setGene(int index, double newValue) {
-        // TODO
+        // TODO verificar
+        genome[index] = newValue;
     }
 
     @Override
     public void swapGenes(RealVectorIndividual other, int index) {
-        // TODO
+        // TODO verificar
+        double aux = genome[index];
+        genome[index] = other.genome[index];
+        other.genome[index] = aux;
     }
 }
