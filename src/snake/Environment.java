@@ -37,6 +37,13 @@ public class Environment {
         this.random = new Random();
     }
 
+    public Environment(int environmentSize, int maxIterations, int tipo, int numInputs, int numOutputs, int numHiddenUnits) {
+        //todo falta o resto do construtor correspondente ao snakeIA
+
+        this(environmentSize,maxIterations,tipo);
+
+    }
+
     public void initialize(int seed) {
         random.setSeed(seed);
 

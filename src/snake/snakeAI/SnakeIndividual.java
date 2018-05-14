@@ -18,6 +18,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     public double computeFitness() {
         int numeroSimulacoes = problem.getNumEvironmentSimulations(); //todo é para começar por aqui
       //todo call setWeitghs
+
         return 0;
     }
 
