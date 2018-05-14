@@ -55,7 +55,7 @@ public class SnakeAIAgent extends SnakeAgent {
      *
      * @param weights vector of weights comming from the individual.
      */
-    public void setWeights(double[] weights) {
+    public void setWeights(double[] weights) {//preenche o genoma
         int x = 0;
         for (int i = 0; i < w1.length; i++) { //em vez de w1.length pode ser inputLayerSize
             for (int j = 0; j < w1[i].length; j++) { //em de w1[i].lenght pode ser w1[0].length ou hiddenLayerSize
@@ -105,6 +105,12 @@ public class SnakeAIAgent extends SnakeAgent {
     }
 
     @Override
+
+    //preenche os inputs....sao relativos a posicao atual da snake por ex:
+    //verificar onde esta a comida copiar do snake adock
+    //só uma direção pode ter 1 e o resto zeros
+
+
     protected Action decide(Perception perception) {
         // TODO
         return null;

@@ -3,7 +3,7 @@ package snake.snakeAI;
 import snake.snakeAI.ga.RealVectorIndividual;
 
 public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeIndividual> {
-
+//declarar o numero de comidas e mov e mostrar com o tostring para ter uma nocao
     public SnakeIndividual(SnakeProblem problem, int size /*TODO?*/) {
         super(problem, size);
         //TODO?
@@ -12,12 +12,28 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     public SnakeIndividual(SnakeIndividual original) {
         super(original);
         //TODO
+        this.fitness=original.fitness;
     }
 
     @Override
+    //coloca 500x a cobra a mexer com os mesmoa pesos, só muda os inputs
+    //implemntar um for //parecido com o botao simulate
     public double computeFitness() {
         int numeroSimulacoes = problem.getNumEvironmentSimulations(); //todo é para começar por aqui
       //todo call setWeitghs
+        for(int i=0;i<numeroSimulacoes;i++){
+            //todo luana
+            //var prob.getEnviroment...
+           // enviromnet.inicialize(i);
+            //enviroment.setweigth(genome);
+            //enviroment.simulate();
+            //devemos obter quantas comidae sa cobra comeu e os movimento antes de morrer
+            //numcomidas += enviromnet.getComida(); //tem que valer muito masi que os mov
+            //numMov += enviromnet.getMov();
+            //fitness = numComidas*Numerogrande+numMov*numMenor;
+            //se tiver essas var no ambient comolar sempre a 0 em cada interaçao
+
+        }
         return 0;
     }
 

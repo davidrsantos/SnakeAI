@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+//antes de simular tem que pasasar os pesos
 
 public class PanelSimulation extends JPanel implements EnvironmentListener {
 
