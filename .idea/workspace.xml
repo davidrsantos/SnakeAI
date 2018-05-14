@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3c51a8d-1b09-4930-b184-2f3dd33ae9df" name="Default" comment="RealVector praticamente feito&#10;SnakeIAAgent comecado&#10;SnakeIndividual comecado">
+    <list default="true" id="d3c51a8d-1b09-4930-b184-2f3dd33ae9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1233,11 +1233,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526340013696</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="RealVector praticamente feito&#10;SnakeIAAgent comecado&#10;SnakeIndividual comecado">
+      <created>1526340117777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1526340117777</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25229000" />
+    <option name="totallyTimeSpent" value="25249000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
