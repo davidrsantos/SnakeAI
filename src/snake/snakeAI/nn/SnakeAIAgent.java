@@ -59,21 +59,17 @@ public class SnakeAIAgent extends SnakeAgent {
         int x = 0;
         for (int i = 0; i < w1.length; i++) { //em vez de w1.length pode ser inputLayerSize
             for (int j = 0; j < w1[i].length; j++) { //em de w1[i].lenght pode ser w1[0].length ou hiddenLayerSize
-
                 this.w1[i][j] = weights[x];
                 x++;
             }
         }
 
-
         for (int i = 0; i < w2.length; i++) { //ou hiddenLayerSize+1
             for (int j = 0; j < w2[i].length; j++) {
-
                 this.w2[i][j] = weights[x];
                 x++;
             }
         }
-
     }
 
     /**
@@ -107,6 +103,33 @@ public class SnakeAIAgent extends SnakeAgent {
     @Override
     protected Action decide(Perception perception) {
         // TODO
+        //convem ter 8 ou mais inputs
+   //     temos de daar mais ifs tambem referentes a comida // e a qualquer outra coisa que se no lembremos de para ajudar a cobra a aprender;
+        if(perception.getN() !=null || !perception.getN().hasTail())
+            inputs[0]=1;
+        else inputs[0]=0;
+        if(perception.getE() !=null || !perception.getE().hasTail())
+            inputs[1]=1;
+        else inputs[1]=0;
+        if(perception.getS() !=null || !perception.getS().hasTail())
+            inputs[2]=1;
+        else inputs[2]=0;
+        if(perception.getW() !=null || !perception.getW().hasTail())
+            inputs[3]=1;
+        else inputs[3]=0;
+
+        // todo fazer o forward
+
+
+
+        if(output[0]==1)
+            return Action.NORTH;
+        if(output[1]==1)
+            return Action.EAST;
+        if(output[2]==1)
+            return Action.SOUTH;
+        if(output[3]==1)
+            return Action.WEST;
         return null;
     }
 }

@@ -18,7 +18,7 @@ public class Environment {
     private final ArrayList<EnvironmentListener> listeners = new ArrayList<>();
     public Random random;
     private Food food;
-    private int tipo; //ramdom, adock, IAagent
+    public int tipo; //ramdom, adock, IAagent
     private boolean stop;
     public Environment(
             int size,
@@ -77,7 +77,7 @@ public class Environment {
                 break;
             case 2:
                 //TODO não esquecer de ativar a  snake IA
-                // SnakeAgent snakeAIAgent = new SnakeAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
+                SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
                 break;
         }
     }
@@ -187,4 +187,7 @@ public class Environment {
     }
 
 
+    public void setWeights(double[] genome) {
+       // snakeAIAgent
+    }
 }
