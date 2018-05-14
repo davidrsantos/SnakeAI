@@ -13,7 +13,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
     //se quisermos alterar o data set podemos
     private static final int NUM_NN_INPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
     private static final int NUM_NN_OUTPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
-    private static  int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
+    private static  int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR  // definido em baixo
     // genome_size calculado em baixo
     final public int numOutputs;
     final private int environmentSize;
@@ -39,7 +39,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
 
         environment = new Environment(
                 environmentSize,
-                maxIterations, tipo);
+                maxIterations, tipo, numInputs, numOutputs, numHiddenUnits);
     }
 
     // MODIFY IF YOU DEFINE OTHER PARAMETERS
