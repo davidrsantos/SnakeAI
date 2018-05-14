@@ -50,9 +50,11 @@ public abstract class SnakeAgent {
             nextCell = environment.getEastCell(cell);
         }
         if (nextCell != null&& !nextCell.hasAgent() && !nextCell.hasTail() ) {
+
             if (nextCell.hasFood()) {
                 Tail tail = new Tail(cell);
                 tails.addFirst(tail);
+                environment.numComidas++; //todo confirmar prof luana
             } else {
                 if (!tails.isEmpty()) {
                     tails.addFirst(new Tail(cell));
@@ -62,6 +64,7 @@ public abstract class SnakeAgent {
                 }
             }
             setCell(nextCell);
+            environment.numMovimentos++;//todo confirmar prof luana
         }else
 
         environment.setStop(true);

@@ -20,6 +20,9 @@ public class Environment {
     private Food food;
     public int tipo; //ramdom, adock, IAagent
     private boolean stop;
+    protected int numMovimentos; //todo confirmar prof luana
+    protected int numComidas;
+
     public Environment(
             int size,
             int maxIterations, int tipo) {
@@ -46,11 +49,11 @@ public class Environment {
 
     public void initialize(int seed) {
         random.setSeed(seed);
-
+        numComidas=0; //todo confirmar prof luana
+        numMovimentos=0;
         for (SnakeAgent snakeAgent : agents) {
             snakeAgent.getCell().setAgent(null);
             snakeAgent.limparTails();
-
         }
         agents.clear();
 
@@ -189,5 +192,15 @@ public class Environment {
 
     public void setWeights(double[] genome) {
        // snakeAIAgent
+    }
+
+    public int getComidas() {
+        //TODO luana
+        return numComidas;
+    }
+
+    public int getMovimentos() {
+        //todo luana
+        return numMovimentos;
     }
 }
