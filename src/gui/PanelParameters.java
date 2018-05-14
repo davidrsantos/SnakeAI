@@ -26,7 +26,7 @@ public class PanelParameters extends PanelAtributesValue {
     public static final String PROB_MUTATION = "0.7";
 
     //para a combobox
-    String[] selectionProblems = {"Snake Random", "Snake AdHoc", "outras"};//TODO faltam os resto dos algoritmos
+    String[] selectionProblems = {"Snake Random", "Snake AdHoc", "SnakeIA"};//TODO faltam os resto dos algoritmos
     JComboBox comboBoxSelectionProblems = new JComboBox(selectionProblems);
 
     JTextField textFieldSeed = new JTextField(SEED, TEXT_FIELD_LENGHT);

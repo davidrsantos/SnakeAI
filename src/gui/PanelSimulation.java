@@ -67,7 +67,7 @@ if (worker != null){
                 for (int i = 0; i < environmentSimulations; i++) {
                     environment.initialize(i);
                     environmentUpdated();
-                    if(environment.tipo==3){
+                    if(environment.tipo==2){
                         environment.setWeights(mainFrame.getBestInRun().getGenome());
                     }
                     environment.simulate();

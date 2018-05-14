@@ -125,7 +125,7 @@ public class SnakeAIAgent extends SnakeAgent {
         else inputs[3]=0;
 
         // todo fazer o forward
-
+    forwardPropagation();
 
 
         if(output[0]==1)

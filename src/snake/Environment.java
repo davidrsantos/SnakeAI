@@ -20,9 +20,12 @@ public class Environment {
     private Food food;
     public int tipo; //ramdom, adock, IAagent
     private boolean stop;
-    public Environment(
-            int size,
-            int maxIterations, int tipo) {
+    private int numInputs;
+    private int numOutputs;
+    private int numHiddenUnits;
+    private double[] genome;
+
+    public Environment(int size, int maxIterations, int tipo) {
 
         this.maxIterations = maxIterations;
         this.tipo = tipo;
@@ -38,10 +41,10 @@ public class Environment {
     }
 
     public Environment(int environmentSize, int maxIterations, int tipo, int numInputs, int numOutputs, int numHiddenUnits) {
-        //todo falta o resto do construtor correspondente ao snakeIA
-
-        this(environmentSize,maxIterations,tipo);
-
+        this(environmentSize, maxIterations, tipo);
+        this.numInputs = numInputs;
+        this.numOutputs = numOutputs;
+        this.numHiddenUnits = numHiddenUnits;
     }
 
     public void initialize(int seed) {
@@ -54,10 +57,10 @@ public class Environment {
         }
         agents.clear();
 
-        if (food != null){
+        if (food != null) {
             food.getCell().setFood(null);
             food = null;
-    }
+        }
 
         placeAgents();
         placeFood();
@@ -68,28 +71,30 @@ public class Environment {
         switch (tipo) {
 
             case 0:
-                   SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
-                   agents.add(snakeRandomAgent);
+                SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
+                agents.add(snakeRandomAgent);
                 break;
             case 1:
                 SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
                 agents.add(snakeAdhocAgent);
                 break;
             case 2:
-                //TODO não esquecer de ativar a  snake IA
-            //    SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN);
+
+                SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this); //todo numeros ficticions
+                snakeAIAgent.setWeights(genome);
+                agents.add(snakeAIAgent);
                 break;
         }
     }
 
     public void placeFood() {
-        int l,c;
+        int l, c;
         Cell cell;
         do {
-            l=random.nextInt(grid.length);
-            c=random.nextInt(grid.length);
-            cell=getCell(l,c);
-        }while (cell.hasAgent() || cell.hasTail());
+            l = random.nextInt(grid.length);
+            c = random.nextInt(grid.length);
+            cell = getCell(l, c);
+        } while (cell.hasAgent() || cell.hasTail());
 
         food = new Food(cell);
     }
@@ -97,8 +102,9 @@ public class Environment {
     public Food getFood() {
         return food;
     }
+
     public void simulate() {
-        stop=false;
+        stop = false;
         for (int i = 0; i < maxIterations && !stop; i++) {
             System.out.println(i + 1);
 
@@ -188,6 +194,7 @@ public class Environment {
 
 
     public void setWeights(double[] genome) {
-       // snakeAIAgent
+        //Todo como fazer?????
+        this.genome=genome;//todo isto não é o pretendido // simplesmento estou a receber o genoma e a fazer o setWeights lá em cima quando instacio a snake AI
     }
 }
