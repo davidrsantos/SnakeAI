@@ -1,5 +1,6 @@
 package snake.snakeAI;
 
+import snake.Environment;
 import snake.snakeAI.ga.RealVectorIndividual;
 
 public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeIndividual> {
@@ -23,9 +24,9 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
       //todo call setWeitghs
         for(int i=0;i<numeroSimulacoes;i++){
             //todo luana
-            //var prob.getEnviroment...
-           // enviromnet.inicialize(i);
-            //enviroment.setweigth(genome);
+            Environment environment = problem.getEnvironment();
+           environment.initialize(i);
+           environment.setWeights(genome);
             //enviroment.simulate();
             //devemos obter quantas comidae sa cobra comeu e os movimento antes de morrer
             //numcomidas += enviromnet.getComida(); //tem que valer muito masi que os mov
