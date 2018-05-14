@@ -18,7 +18,7 @@ public class Environment {
     private final ArrayList<EnvironmentListener> listeners = new ArrayList<>();
     public Random random;
     private Food food;
-    private int tipo;
+    private int tipo; //ramdom, adock, IAagent
     private boolean stop;
     public Environment(
             int size,

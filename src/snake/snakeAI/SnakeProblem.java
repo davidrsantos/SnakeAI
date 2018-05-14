@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SnakeProblem implements Problem<SnakeIndividual> {
+    //os inputs diz respeito a posicao actual da cobra
+    //se quisermos alterar o data set podemos
     private static final int NUM_NN_INPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
     private static final int NUM_NN_OUTPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
     private static  int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE

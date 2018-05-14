@@ -18,7 +18,7 @@ public abstract class Individual<P extends Problem, I extends Individual> implem
 
     public abstract int getNumGenes();
 
-    public abstract void swapGenes(I other, int g);
+    public abstract void swapGenes(I other, int g); //trocar genes
 
     public double getFitness() {
         return fitness;
