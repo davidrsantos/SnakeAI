@@ -3,8 +3,6 @@ package snake.snakeAI.ga;
 public abstract class RealVectorIndividual<P extends Problem, I extends RealVectorIndividual> extends Individual<P, I> {
     // TODO verificar
 
- //   public static final double ONE = 1; // TODO tem de se decidir para que valor é true e para que valor é false
-  //  public static final double NONE= -1;
 
     protected double[] genome;
 

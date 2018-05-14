@@ -43,7 +43,7 @@ public class PanelParameters extends PanelAtributesValue {
     //TODO - MORE PARAMETERS?
 
     public PanelParameters(MainFrame mainFrame) {
-        this.mainFrame=mainFrame;
+        this.mainFrame = mainFrame;
         title = "Genetic algorithm parameters";
 
         labels.add(new JLabel("Seed: "));
@@ -62,10 +62,6 @@ public class PanelParameters extends PanelAtributesValue {
         valueComponents.add(comboBoxSelectionMethods);
         comboBoxSelectionMethods.addActionListener(new JComboBoxSelectionMethods_ActionAdapter(this));
 
-        labels.add(new JLabel("Problem: "));
-        valueComponents.add(comboBoxSelectionProblems);
-        comboBoxSelectionProblems.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
-
         labels.add(new JLabel("Tournament size: "));
         valueComponents.add(textFieldTournamentSize);
         textFieldTournamentSize.addKeyListener(new IntegerTextField_KeyAdapter(null));
@@ -79,6 +75,10 @@ public class PanelParameters extends PanelAtributesValue {
         labels.add(new JLabel("Mutation prob.: "));
         valueComponents.add(textFieldProbMutation);
 
+        labels.add(new JLabel("Problem: "));
+        valueComponents.add(comboBoxSelectionProblems);
+        comboBoxSelectionProblems.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
+
         //TODO - MORE PARAMETERS?
         configure();
     }
@@ -88,7 +88,7 @@ public class PanelParameters extends PanelAtributesValue {
     }
 
     public void actionPerformedSelectionProblems(ActionEvent e) {
-       mainFrame.setTipo(comboBoxSelectionProblems.getSelectedIndex());
+        mainFrame.setTipo(comboBoxSelectionProblems.getSelectedIndex());
     }
 
 
