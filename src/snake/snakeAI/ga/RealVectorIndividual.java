@@ -1,5 +1,5 @@
 package snake.snakeAI.ga;
-
+//
 public abstract class RealVectorIndividual<P extends Problem, I extends RealVectorIndividual> extends Individual<P, I> {
     // TODO verificar
 
