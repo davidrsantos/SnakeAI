@@ -26,8 +26,8 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
             //todo luana
             Environment environment = problem.getEnvironment();
            environment.initialize(i);
-           environment.setWeights(genome);
-            //enviroment.simulate();
+           //environment.setWeights(genome);
+            environment.simulate();
             //devemos obter quantas comidae sa cobra comeu e os movimento antes de morrer
             //numcomidas += enviromnet.getComida(); //tem que valer muito masi que os mov
             //numMov += enviromnet.getMov();
