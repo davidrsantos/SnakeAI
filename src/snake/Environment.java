@@ -25,8 +25,10 @@ public class Environment {
     private int numInputs;
     private int numOutputs;
     private int numHiddenUnits;
-    private double[] genome;
 
+    public void setNumComidas() {
+        this.numComidas++;
+    }
 
     public Environment(
             int size,
@@ -53,23 +55,18 @@ public class Environment {
 
     public void initialize(int seed) {
         random.setSeed(seed);
-        numComidas=0; //todo confirmar prof luana
-        numMovimentos=0;
         for (SnakeAgent snakeAgent : agents) {
             snakeAgent.getCell().setAgent(null);
             snakeAgent.limparTails();
 
         }
         agents.clear();
-
         if (food != null){
             food.getCell().setFood(null);
             food = null;
     }
-
         placeAgents();
         placeFood();
-
     }
 
     private void placeAgents() {
@@ -85,11 +82,13 @@ public class Environment {
                 break;
             case 2:
 
-                SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this); //todo numeros ficticions
-                snakeAIAgent.setWeights(genome);
+                SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent);
                 break;
         }
+        //melhorar a existencia.
+        //adicionar outra AI Snake com resultados diferente
+
     }
 
     public void placeFood() {
@@ -109,14 +108,17 @@ public class Environment {
     }
     public void simulate() {
         stop=false;
-        for (int i = 0; i < maxIterations && !stop; i++) {
-            System.out.println(i + 1);
+        numMovimentos=0;
+        int i;
+        for ( i = 0; i < maxIterations && !stop; i++) {
+            //System.out.println(i + 1);
 
             for (SnakeAgent agent : agents) {
                 agent.act(this);
                 fireUpdatedEnvironment();   //redesenha o painel
             }
         }
+        numMovimentos=i;
     }
 
     public int getSize() {
@@ -198,10 +200,10 @@ public class Environment {
 
 
     public void setWeights(double[] genome) {
-        //Todo como fazer?????
-        this.genome=genome;//todo isto não é o pretendido // simplesmento estou a receber o genoma e a fazer o setWeights lá em cima quando instacio a snake AI
+        for (SnakeAgent agent : agents) {
+            ((SnakeAIAgent) agent).setWeights(genome);
+        }
     }
-
     public int getComidas() {
         //TODO luana
         return numComidas;
