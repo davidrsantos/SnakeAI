@@ -41,7 +41,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
             //se tiver essas var no ambient colocar sempre a 0 em cada interaçao
 
         }
-        fitness = numComidas*10000+numMovimentos*10;
+        fitness = numComidas*10000+numMovimentos*1;
         return fitness;
     }
 
