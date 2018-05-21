@@ -133,9 +133,24 @@ public class SnakeAIAgent extends SnakeAgent {
             inputs[3]=1;
         else inputs[3]=0;
 
+        if (environment.getFood().getCell().getLine() < cell.getLine())
+            inputs[4]=1;
+        else inputs[4]=0;
+
+        if (environment.getFood().getCell().getLine() > cell.getLine())
+            inputs[5]=1;
+        else inputs[5]=0;
+
+        if (environment.getFood().getCell().getColumn() > cell.getColumn())
+            inputs[6]=1;
+        else inputs[6]=0;
+
+        if (environment.getFood().getCell().getColumn() < cell.getColumn())
+            inputs[7]=1;
+        else inputs[7]=0;
+
         // todo fazer o forward
     forwardPropagation();
-
 
         if(output[0]==1)
             return Action.NORTH;
