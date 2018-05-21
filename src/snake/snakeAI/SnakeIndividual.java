@@ -34,14 +34,19 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
             environment.initialize(i);
             environment.setWeights(genome);
             environment.simulate();
-            //devemos obter quantas comidas sa cobra comeu e os movimento antes de morrer
-            numComidas += environment.getComidas(); //tem que valer muito masi que os mov
+
+            numComidas += environment.getComidas();
             numMovimentos += environment.getMovimentos();
+
+
 
             //se tiver essas var no ambient colocar sempre a 0 em cada interaçao
 
         }
-        fitness = numComidas*10000+numMovimentos*1;
+        System.out.println("numero comidas ="+ numComidas);
+        System.out.println("numero move ="+ numMovimentos);
+        fitness = numComidas*10000+numMovimentos;
+        System.out.println(fitness);
         return fitness;
     }
 

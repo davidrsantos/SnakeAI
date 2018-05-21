@@ -16,11 +16,14 @@ public class MutationMUTATION_NAME<I extends RealVectorIndividual> extends Mutat
     public void run(I ind) {
         // TODO
         for (int i = 0; i < ind.getNumGenes(); i++) {
-            if (GeneticAlgorithm.random.nextDouble()<probability){
+            if (GeneticAlgorithm.random.nextDouble() < probability) {
 
-                    ind.setGene(i, GeneticAlgorithm.random.nextDouble()*2-1);
-                }
+
+                double v = GeneticAlgorithm.random.nextDouble() * 2 - 1;
+                ind.setGene(i, v);
+                System.out.println("Valor da mutacao = " + v + "valor de x = ");
             }
+        }
 
     }
 

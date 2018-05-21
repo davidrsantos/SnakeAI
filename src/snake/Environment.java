@@ -109,6 +109,7 @@ public class Environment {
     public void simulate() {
         stop=false;
         numMovimentos=0;
+        numComidas=0;
         int i;
         for ( i = 0; i < maxIterations && !stop; i++) {
             //System.out.println(i + 1);
