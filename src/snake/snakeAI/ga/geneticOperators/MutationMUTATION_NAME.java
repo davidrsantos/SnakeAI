@@ -21,7 +21,7 @@ public class MutationMUTATION_NAME<I extends RealVectorIndividual> extends Mutat
 
                 double v = GeneticAlgorithm.random.nextDouble() * 2 - 1;
                 ind.setGene(i, v);
-                System.out.println("Valor da mutacao = " + v + "valor de x = ");
+                // System.out.println("Valor da mutacao = " + v + "valor de x = ");
             }
         }
 

@@ -43,10 +43,10 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
             //se tiver essas var no ambient colocar sempre a 0 em cada interaçao
 
         }
-        System.out.println("numero comidas ="+ numComidas);
-        System.out.println("numero move ="+ numMovimentos);
+      //  System.out.println("numero comidas ="+ numComidas);
+        //System.out.println("numero move ="+ numMovimentos);
         fitness = numComidas*10000+numMovimentos;
-        System.out.println(fitness);
+        //System.out.println(fitness);
         return fitness;
     }
 
