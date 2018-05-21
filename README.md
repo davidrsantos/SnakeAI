@@ -24,4 +24,10 @@ Simulate(mover 500x) dentro do compute fitness
 //no ambiente
 Método seteight passava os peesos que recebe para a cobra
 
-
+//TEXT View com os resultados do numero de comidas, num de mov 
+//implementar o botao experiments para escolher um ficheiro com dados do exel
+//implementar o botao rum experiments
+//falta mostrar gráficos...
+//métodos de mutação diferentes 
+//métodos de cruzamentos diferentes
+//

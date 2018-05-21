@@ -11,7 +11,7 @@ import java.util.List;
 public class SnakeProblem implements Problem<SnakeIndividual> {
     //os inputs diz respeito a posicao actual da cobra
     //se quisermos alterar o data set podemos
-    private static final int NUM_NN_INPUTS = 5; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
+    private static final int NUM_NN_INPUTS = 13; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
     private static final int NUM_NN_OUTPUTS = 4; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
     private   int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR  // definido em baixo
     // genome_size calculado em baixo

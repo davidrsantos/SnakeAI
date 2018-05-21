@@ -120,6 +120,9 @@ public class SnakeAIAgent extends SnakeAgent {
         // TODO
         //convem ter 8 ou mais inputs
    //     temos de daar mais ifs tambem referentes a comida // e a qualquer outra coisa que se no lembremos de para ajudar a cobra a aprender;
+
+
+
         if(perception.getN() !=null && !perception.getN().hasTail())
             inputs[0]=1;
         else inputs[0]=0;
@@ -133,9 +136,38 @@ public class SnakeAIAgent extends SnakeAgent {
             inputs[3]=1;
         else inputs[3]=0;
 
+        if (perception.getN() !=null && perception.getN().hasFood())
+            inputs[4]=1;
+        else inputs[4]=0;
+
+        if (perception.getE() !=null && perception.getE().hasFood())
+            inputs[5]=1;
+        else inputs[5]=0;
+
+        if (perception.getS() !=null && perception.getS().hasFood())
+            inputs[6]=1;
+        else inputs[6]=0;
+
+        if (perception.getW() !=null && perception.getW().hasFood())
+            inputs[7]=1;
+        else inputs[7]=0;
+
+
+        if (environment.getFood().getCell().getLine() < cell.getLine())
+            inputs[8]=1;
+        else inputs[8]=0;
+        if (environment.getFood().getCell().getLine() > cell.getLine())
+            inputs[9]=1;
+        else inputs[9]=0;
+        if (environment.getFood().getCell().getColumn() > cell.getColumn())
+            inputs[10]=1;
+        else inputs[10]=0;
+        if (environment.getFood().getCell().getColumn() < cell.getColumn())
+            inputs[11]=1;
+        else inputs[11]=0;
+
         // todo fazer o forward
     forwardPropagation();
-
 
         if(output[0]==1)
             return Action.NORTH;
