@@ -4,18 +4,19 @@ import snake.Environment;
 import snake.snakeAI.ga.RealVectorIndividual;
 
 public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeIndividual> {
-    int numComidas;
-    int numMovimentos;
+    private int numComidas;
+   private int numMovimentos;
 //declarar o numero de comidas e mov e mostrar com o tostring para ter uma nocao
-    public SnakeIndividual(SnakeProblem problem, int size /*TODO?*/) {
+    public SnakeIndividual(SnakeProblem problem, int size ) {
         super(problem, size);
-        //TODO?
     }
 
     public SnakeIndividual(SnakeIndividual original) {
         super(original);
         //TODO
         this.fitness=original.fitness;
+        this.numMovimentos=original.numMovimentos;
+        this.numComidas=original.numComidas;
     }
 
     @Override
@@ -26,6 +27,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
       //todo call setWeitghs
        numComidas=0;
        numMovimentos=0;
+       fitness=0;
         for(int i=0;i<numeroSimulacoes;i++){
             //todo luana
             Environment environment = problem.getEnvironment();
@@ -35,11 +37,12 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
             //devemos obter quantas comidas sa cobra comeu e os movimento antes de morrer
             numComidas += environment.getComidas(); //tem que valer muito masi que os mov
             numMovimentos += environment.getMovimentos();
-            fitness = numComidas*10000+numMovimentos*10;
+
             //se tiver essas var no ambient colocar sempre a 0 em cada interaçao
 
         }
-        return 0;
+        fitness = numComidas*10000+numMovimentos*1;
+        return fitness;
     }
 
     public double[] getGenome() {
@@ -54,9 +57,9 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
         sb.append("\nfitness: ");
         sb.append(fitness);
         sb.append("\nComidas: ");
-        sb.append(numComidas);
+        sb.append((double)numComidas/problem.getNumEvironmentSimulations());
         sb.append("\nMovimetos: ");
-        sb.append(numMovimentos);
+        sb.append((double)numMovimentos/problem.getNumEvironmentSimulations());
         return sb.toString();
     }
 
@@ -67,7 +70,10 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
      */
     @Override
     public int compareTo(SnakeIndividual i) {
-        //TODO
+        if(fitness<i.fitness)
+            return -1;
+        if(fitness>i.fitness)
+            return 1;
         return 0;
     }
 

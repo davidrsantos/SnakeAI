@@ -11,9 +11,9 @@ import java.util.List;
 public class SnakeProblem implements Problem<SnakeIndividual> {
     //os inputs diz respeito a posicao actual da cobra
     //se quisermos alterar o data set podemos
-    private static final int NUM_NN_INPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
-    private static final int NUM_NN_OUTPUTS = 100; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
-    private static  int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR  // definido em baixo
+    private static final int NUM_NN_INPUTS = 5; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
+    private static final int NUM_NN_OUTPUTS = 4; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR CASE
+    private   int GENOME_SIZE ; // TODO THIS IS A FAKE NUMBER; PLEASE ADAPT TO YOUR  // definido em baixo
     // genome_size calculado em baixo
     final public int numOutputs;
     final private int environmentSize;
@@ -35,7 +35,7 @@ public class SnakeProblem implements Problem<SnakeIndividual> {
         this.numHiddenUnits = numHiddenUnits;
         this.numOutputs = NUM_NN_OUTPUTS;
         this.numEnvironmentRuns = numEnvironmentRuns;
-        this.GENOME_SIZE =((numInputs+1)*numHiddenUnits)+((numHiddenUnits+1)*numOutputs); //todo fiz o que a prof disse
+        this.GENOME_SIZE =((numInputs)*numHiddenUnits)+((numHiddenUnits+1)*numOutputs); //todo fiz o que a prof disse
 
         environment = new Environment(
                 environmentSize,

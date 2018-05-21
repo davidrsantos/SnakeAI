@@ -7,9 +7,9 @@ import snake.snakeAI.ga.RealVectorIndividual;
 public class MutationMUTATION_NAME<I extends RealVectorIndividual> extends Mutation<I> {
 
 
-    public MutationMUTATION_NAME(double probability /*TODO?*/) {
+    public MutationMUTATION_NAME(double probability) {
         super(probability);
-        // TODO
+        // TODO pode haver outro tipo de mutacao
     }
 
     @Override

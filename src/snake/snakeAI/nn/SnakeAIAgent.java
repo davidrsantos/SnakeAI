@@ -87,15 +87,24 @@ public class SnakeAIAgent extends SnakeAgent {
             //aplicar a função sigmoide a hiddenLayerOutput[i] (função de ativação)
             hiddenLayerOutput[i] = 1 / (1 + Math.exp(-sum)); //ou Math.pow(Math.E, -sum)
         }
-
+        double maior=Double.MIN_VALUE;
+        int pos=0;
         for (int i = 0; i < outputLayerSize; i++) { //ou w2[0].length
             sum = 0;
             for (int j = 0; j < hiddenLayerSize + 1; j++) { //ou hiddenLayerOutput.length ou w2.length
                 sum += hiddenLayerOutput[j] * w2[j][i];
+
             }
+            output[i]=0;
+            if( sum >maior){
+                maior=sum;
+               pos=i;
+            }
+
             //aplicar a função sigmoide a outputLayerOutput[i]
             //TODO ERRO output[i] = 0ou1 temos de dedicder como vamos escolher os outputs conforme o que a sum nos dá
         }
+        output[pos]=1;
 
         //todo erro return outputLayerOutput;
     }
@@ -111,16 +120,16 @@ public class SnakeAIAgent extends SnakeAgent {
         // TODO
         //convem ter 8 ou mais inputs
    //     temos de daar mais ifs tambem referentes a comida // e a qualquer outra coisa que se no lembremos de para ajudar a cobra a aprender;
-        if(perception.getN() !=null || !perception.getN().hasTail())
+        if(perception.getN() !=null && !perception.getN().hasTail())
             inputs[0]=1;
         else inputs[0]=0;
-        if(perception.getE() !=null || !perception.getE().hasTail())
+        if(perception.getE() !=null && !perception.getE().hasTail())
             inputs[1]=1;
         else inputs[1]=0;
-        if(perception.getS() !=null || !perception.getS().hasTail())
+        if(perception.getS() !=null && !perception.getS().hasTail())
             inputs[2]=1;
         else inputs[2]=0;
-        if(perception.getW() !=null || !perception.getW().hasTail())
+        if(perception.getW() !=null && !perception.getW().hasTail())
             inputs[3]=1;
         else inputs[3]=0;
 
