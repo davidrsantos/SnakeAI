@@ -28,6 +28,8 @@ public class PanelParameters extends PanelAtributesValue {
     //para a combobox
     String[] selectionProblems = {"Snake Random", "Snake AdHoc", "SnakeIA", "Double Snake"};//TODO faltam os resto dos algoritmos
     JComboBox comboBoxSelectionProblems = new JComboBox(selectionProblems);
+    String[] selectionMutation = {"Random", "Invation"};
+    JComboBox comboBoxMutationMethods = new JComboBox(selectionMutation);
 
     JTextField textFieldSeed = new JTextField(SEED, TEXT_FIELD_LENGHT);
     JTextField textFieldN = new JTextField(POPULATION_SIZE, TEXT_FIELD_LENGHT);
@@ -79,6 +81,10 @@ public class PanelParameters extends PanelAtributesValue {
         valueComponents.add(comboBoxSelectionProblems);
         comboBoxSelectionProblems.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
 
+        labels.add(new JLabel("Mutation: "));
+        valueComponents.add(comboBoxMutationMethods);
+        comboBoxMutationMethods.addActionListener(new JComboBoxSelectionProblems_ActionAdapter(this));
+
         //TODO - MORE PARAMETERS?
         configure();
     }
@@ -124,7 +130,17 @@ public class PanelParameters extends PanelAtributesValue {
     public Mutation<SnakeIndividual> getMutationMethod() {
         double mutationProbability = Double.parseDouble(textFieldProbMutation.getText());
         //TODO
-        return new MutationMUTATION_NAME<>(mutationProbability/*TODO?*/);
+        switch (comboBoxMutationMethods.getSelectedIndex()) {
+            case 0:
+                return new MutationRandom<>(mutationProbability/*TODO?*/);
+            case 1:
+                return new MutationInvation<>(mutationProbability/*TODO?*/);
+//            case 2:
+//                return new RecombinationUniform<>(recombinationProb);
+        }
+        return null;
+
+
     }
 }
 

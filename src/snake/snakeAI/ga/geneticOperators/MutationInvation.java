@@ -24,7 +24,6 @@ public class MutationInvation<I extends RealVectorIndividual> extends Mutation<I
                 double y = GeneticAlgorithm.random.nextDouble() * 2 - 1;
                 double v = 3 * Math.pow(1-x ,2)* Math.pow(Math.E, Math.pow(-x,2)) -Math.pow(y+ 1, 2) -10 *((x/5)-(x/3)-(y/5));
                 ind.setGene(i, v);
-                System.out.println("Valor da mutacao = " + v  + "valor de x = " );
                 }
             }
 
@@ -32,6 +31,6 @@ public class MutationInvation<I extends RealVectorIndividual> extends Mutation<I
 
     @Override
     public String toString() {
-        return "Uniform distribution mutation (" + probability /* + TODO?*/;
+        return "Mutation Invation  (" + probability + ")"/* +  TODO?*/;
     }
 }

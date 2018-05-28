@@ -54,7 +54,7 @@ public abstract class SnakeAgent {
             if (nextCell.hasFood()) {
                 Tail tail = new Tail(cell);
                 tails.addFirst(tail);
-                environment.setNumComidas(); //todo confirmar prof luana
+                environment.setNumComidas();
             } else {
                 if (!tails.isEmpty()) {
                     tails.addFirst(new Tail(cell));

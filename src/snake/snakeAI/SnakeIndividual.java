@@ -13,7 +13,6 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
 
     public SnakeIndividual(SnakeIndividual original) {
         super(original);
-        //TODO
         this.fitness=original.fitness;
         this.numMovimentos=original.numMovimentos;
         this.numComidas=original.numComidas;
@@ -23,13 +22,11 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     //coloca 500x a cobra a mexer com os mesmoa pesos, só muda os inputs
     //implemntar um for //parecido com o botao simulate
     public double computeFitness() {
-        int numeroSimulacoes = problem.getNumEvironmentSimulations(); //todo é para começar por aqui
-      //todo call setWeitghs
+        int numeroSimulacoes = problem.getNumEvironmentSimulations();
        numComidas=0;
        numMovimentos=0;
        fitness=0;
         for(int i=0;i<numeroSimulacoes;i++){
-            //todo luana
             Environment environment = problem.getEnvironment();
             environment.initialize(i);
             environment.setWeights(genome);
@@ -51,8 +48,7 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
     }
 
     public double[] getGenome() {
-
-        return super.genome; //todo verificar
+        return super.genome;
     }
 
     @Override

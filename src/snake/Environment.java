@@ -20,7 +20,7 @@ public class Environment {
     private Food food;
     public int tipo; //ramdom, adock, IAagent
     private boolean stop;
-    protected int numMovimentos; //todo confirmar prof luana
+    protected int numMovimentos;
     protected int numComidas;
     private int numInputs;
     private int numOutputs;
@@ -206,12 +206,10 @@ public class Environment {
         }
     }
     public int getComidas() {
-        //TODO luana
         return numComidas;
     }
 
     public int getMovimentos() {
-        //todo luana
         return numMovimentos;
     }
 }
