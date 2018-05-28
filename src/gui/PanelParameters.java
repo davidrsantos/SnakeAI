@@ -23,7 +23,7 @@ public class PanelParameters extends PanelAtributesValue {
     public static final String GENERATIONS = "1000";
     public static final String TOURNAMENT_SIZE = "4";
     public static final String PROB_RECOMBINATION = "0.7";
-    public static final String PROB_MUTATION = "0.7";
+    public static final String PROB_MUTATION = "0.01";
 
     //para a combobox
     String[] selectionProblems = {"Snake Random", "Snake AdHoc", "SnakeIA", "Double Snake"};//TODO faltam os resto dos algoritmos
