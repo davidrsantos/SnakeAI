@@ -6,7 +6,8 @@ import java.awt.*;
 public class Main {
 
     public Main() {
-
+//ola
+        int i;
         MainFrame frame = new MainFrame();
 
         // Center the window
