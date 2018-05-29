@@ -84,7 +84,12 @@ public class Environment {
 
                 SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent);
+
+
                 break;
+                //todo para duas cobraas iguais o sao o mesmo setweights
+
+            //todo para duas cobras diferente tem de ser um setweiths diferente que tenha o tamanho para duas e que depois separaremos 0 até x para a primeira e x até ao ultimo para outra
         }
         //melhorar a existencia.
         //adicionar outra AI Snake com resultados diferente
