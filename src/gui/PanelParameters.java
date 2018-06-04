@@ -134,7 +134,7 @@ public class PanelParameters extends PanelAtributesValue {
             case 0:
                 return new MutationRandom<>(mutationProbability/*TODO?*/);
             case 1:
-                return new MutationInvation<>(mutationProbability/*TODO?*/);
+                return new MutationUniform<>(mutationProbability/*TODO?*/);
 //            case 2:
 //                return new RecombinationUniform<>(recombinationProb);
         }
