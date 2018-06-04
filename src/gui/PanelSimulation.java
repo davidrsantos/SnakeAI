@@ -70,6 +70,9 @@ if (worker != null){
                     if(environment.tipo==2){
                         environment.setWeights(mainFrame.getBestInRun().getGenome());
                     }
+                    if(environment.tipo==3){//todo confirmar com a professora
+                        environment.setWeights(mainFrame.getBestInRun().getGenome());
+                    }
                     environment.simulate();
                 }
                 return null;

@@ -1,6 +1,7 @@
 package snake;
 
 import snake.snakeAI.nn.SnakeAIAgent;
+import snake.snakeAI.nn.SnakeAIAgent1;
 import snake.snakeAdhoc.SnakeAdhocAgent;
 import snake.snakeRandom.SnakeRandomAgent;
 
@@ -81,12 +82,18 @@ public class Environment {
                 agents.add(snakeAdhocAgent);
                 break;
             case 2:
-
+            //só uma cobra
                 SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent);
 
-
                 break;
+            case 3://todo confirmar com a professora
+                //duas cobras
+                SnakeAIAgent snakeAIAgent1 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
+                agents.add(snakeAIAgent1);
+
+                SnakeAIAgent snakeAIAgent2 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
+                agents.add(snakeAIAgent2);
                 //todo para duas cobraas iguais o sao o mesmo setweights
 
             //todo para duas cobras diferente tem de ser um setweiths diferente que tenha o tamanho para duas e que depois separaremos 0 até x para a primeira e x até ao ultimo para outra
@@ -205,9 +212,14 @@ public class Environment {
     }
 
 
-    public void setWeights(double[] genome) {
+
+    public void setWeights(double[] genome) {//todo confirmar com a professora
         for (SnakeAgent agent : agents) {
-            ((SnakeAIAgent) agent).setWeights(genome);
+            if(agent instanceof SnakeAIAgent)
+                ((SnakeAIAgent) agent).setWeights(genome);
+            if(agent instanceof SnakeAIAgent1)
+                ((SnakeAIAgent1) agent).setWeights(genome);
+            //fazer outro
         }
     }
     public int getComidas() {

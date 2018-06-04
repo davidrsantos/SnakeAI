@@ -1,7 +1,7 @@
 package snake;
 
-import java.awt.*;
-import java.util.LinkedList;
+        import java.awt.*;
+        import java.util.LinkedList;
 
 public abstract class SnakeAgent {
 
@@ -65,7 +65,7 @@ public abstract class SnakeAgent {
             setCell(nextCell);
         }else
 
-        environment.setStop(true);
+            environment.setStop(true);
 
     }
 
