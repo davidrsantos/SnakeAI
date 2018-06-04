@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40253db5-b36c-4e1b-883d-01a561f9d7d3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PanelSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PanelSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snake/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snake/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snake/SnakeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snake/SnakeAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snake/snakeAI/SnakeProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snake/snakeAI/SnakeProblem.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanelSimulation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PanelSimulation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/PanelSimulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="430">
               <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
             </state>
           </provider>
@@ -94,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanelParameters.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PanelParameters.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/PanelParameters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2384">
+            <state relative-caret-position="-901">
               <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
             </state>
           </provider>
@@ -303,7 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="envi&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/Environment.java&#10;MUTA&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/MutationMUTATION_NAME.java&#10;MU&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/Mutation.java&#10;snakeP&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/SnakeProblem.java&#10;snake&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/nn/SnakeAIAgent.java&#10;mu&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/Mutation.java&#10;numComidas&#9;PSI&#9;JAVA://snake.snakeAI.SnakeIndividual#numComidas&#10;Comidas&#9;PSI&#9;JAVA://snake.Environment#getComidas&#10;comidas&#9;PSI&#9;JAVA://snake.Environment#getComidas&#10;sna&#9;FILE&#9;file://E:/Online/SnakeAI/src/snake/snakeAI/SnakeIndividual.java&#10;snak&#9;FILE&#9;file://E:/Online/SnakeAI/src/snake/snakeAI/SnakeIndividual.java&#10;fo&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#forwardPropagation&#10;ONE&#9;PSI&#9;JAVA://snake.snakeAI.ga.RealVectorIndividual#ONE&#10;setW&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#setWeights&#10;getSi&#9;PSI&#9;JAVA://snake.snakeAI.SnakeProblem#getNumEvironmentSimulations&#10;setwei&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#setWeights&#10;has&#9;PSI&#9;JAVA://snake.Cell#hasFood&#10;seed&#9;PSI&#9;JAVA://gui.PanelParameters#SEED&#10;random&#9;PSI&#9;JAVA://snake.Environment#random" />
+    <property name="SearchEverywhereHistoryKey" value="pa&#9;FILE&#9;file://D:/Snake/SnakeAI/src/gui/PanelParameters.java&#10;envi&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/Environment.java&#10;MUTA&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/MutationMUTATION_NAME.java&#10;MU&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/Mutation.java&#10;snakeP&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/SnakeProblem.java&#10;snake&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/nn/SnakeAIAgent.java&#10;mu&#9;FILE&#9;file://D:/Snake/SnakeAI/src/snake/snakeAI/ga/geneticOperators/Mutation.java&#10;numComidas&#9;PSI&#9;JAVA://snake.snakeAI.SnakeIndividual#numComidas&#10;Comidas&#9;PSI&#9;JAVA://snake.Environment#getComidas&#10;comidas&#9;PSI&#9;JAVA://snake.Environment#getComidas&#10;sna&#9;FILE&#9;file://E:/Online/SnakeAI/src/snake/snakeAI/SnakeIndividual.java&#10;snak&#9;FILE&#9;file://E:/Online/SnakeAI/src/snake/snakeAI/SnakeIndividual.java&#10;fo&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#forwardPropagation&#10;ONE&#9;PSI&#9;JAVA://snake.snakeAI.ga.RealVectorIndividual#ONE&#10;setW&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#setWeights&#10;getSi&#9;PSI&#9;JAVA://snake.snakeAI.SnakeProblem#getNumEvironmentSimulations&#10;setwei&#9;PSI&#9;JAVA://snake.snakeAI.nn.SnakeAIAgent#setWeights&#10;has&#9;PSI&#9;JAVA://snake.Cell#hasFood&#10;seed&#9;PSI&#9;JAVA://gui.PanelParameters#SEED&#10;random&#9;PSI&#9;JAVA://snake.Environment#random" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="E:/OneDrive - IPLeiria/Documents/Eng. Informática/2ºAno/IA/Search" />
@@ -541,26 +534,32 @@
       <updated>1527627691031</updated>
       <workItem from="1527627705078" duration="1429000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="já implementei as duas snakes iguais">
+      <created>1528147845234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1528147845234</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7067000" />
+    <option name="totallyTimeSpent" value="7346000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32888147" />
-      <window_info active="true" anchor="bottom" id="Messages" order="1" visible="true" weight="0.18864775" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.18864775" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.23205343" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.92654425" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.20534223" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="0" />
@@ -615,6 +614,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -627,7 +652,8 @@
     <MESSAGE value="RealVector praticamente feito&#10;SnakeIAAgent comecado&#10;SnakeIndividual comecado" />
     <MESSAGE value="Já é inteligente mas falta evoluir." />
     <MESSAGE value="Já é inteligente mas falta evoluir. Implementei mais 4 entradas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Já é inteligente mas falta evoluir. Implementei mais 4 entradas" />
+    <MESSAGE value="já implementei as duas snakes iguais" />
+    <option name="LAST_COMMIT_MESSAGE" value="já implementei as duas snakes iguais" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -896,13 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/PanelParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2384">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/ga/Problem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -978,8 +997,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/PanelSimulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
+        <state relative-caret-position="430">
           <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/PanelParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-901">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
         </state>
       </provider>
     </entry>
