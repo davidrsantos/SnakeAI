@@ -88,14 +88,18 @@ public class Environment {
 
                 break;
             case 3://todo confirmar com a professora
-                //duas cobras
+                //duas cobras iguais
                 SnakeAIAgent snakeAIAgent1 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent1);
 
                 SnakeAIAgent snakeAIAgent2 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent2);
-                //todo para duas cobraas iguais o sao o mesmo setweights
+            case 4://todo duas cobras diferentes
+                SnakeAIAgent snakeAIAgent3 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
+                agents.add(snakeAIAgent3);
 
+                SnakeAIAgent1 snakeAIAgent4 = new SnakeAIAgent1(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
+                agents.add(snakeAIAgent4);
             //todo para duas cobras diferente tem de ser um setweiths diferente que tenha o tamanho para duas e que depois separaremos 0 até x para a primeira e x até ao ultimo para outra
         }
         //melhorar a existencia.

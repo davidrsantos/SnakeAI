@@ -153,34 +153,35 @@ public class SnakeAIAgent1 extends SnakeAgent {
         else inputs[7]=0;
 
 
-        if (environment.getFood().getCell().getLine() < cell.getLine())
-            inputs[8]=1;
-        else inputs[8]=0;
-        if (environment.getFood().getCell().getLine() > cell.getLine())
-            inputs[9]=1;
-        else inputs[9]=0;
-        if (environment.getFood().getCell().getColumn() > cell.getColumn())
-            inputs[10]=1;
-        else inputs[10]=0;
-        if (environment.getFood().getCell().getColumn() < cell.getColumn())
-            inputs[11]=1;
-        else inputs[11]=0;
-
         // todo adicionar o agente
 
         if (perception.getN() !=null && perception.getN().hasAgent())
-                inputs[12]=1;
-        else inputs[12]=0;
+                inputs[8]=1;
+        else inputs[8]=0;
 
         if (perception.getE() !=null && perception.getE().hasAgent())
-            inputs[13]=1;
-        else inputs[13]=0;
+            inputs[9]=1;
+        else inputs[9]=0;
 
         if (perception.getS() !=null && perception.getS().hasAgent())
-            inputs[14]=1;
-        else inputs[14]=0;
+            inputs[10]=1;
+        else inputs[10]=0;
 
         if (perception.getW() !=null && perception.getW().hasAgent())
+            inputs[11]=1;
+        else inputs[11]=0;
+//todo em relacao a outra snake troquei esses inputs de lugar
+
+        if (environment.getFood().getCell().getLine() < cell.getLine())
+            inputs[12]=1;
+        else inputs[12]=0;
+        if (environment.getFood().getCell().getLine() > cell.getLine())
+            inputs[13]=1;
+        else inputs[13]=0;
+        if (environment.getFood().getCell().getColumn() > cell.getColumn())
+            inputs[14]=1;
+        else inputs[14]=0;
+        if (environment.getFood().getCell().getColumn() < cell.getColumn())
             inputs[15]=1;
         else inputs[15]=0;
     forwardPropagation();
