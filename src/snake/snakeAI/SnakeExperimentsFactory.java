@@ -69,7 +69,7 @@ public class SnakeExperimentsFactory extends ExperimentsFactory {
             //TODO OTHER PARAMETERS TO YOUR MUTATION OPERATOR, IF THEY EXIST, ARE FETCHED HERE
             mutation = new MutationRandom<>(mutationProbability /*TODO COMPLETE?*/);
         }
-
+    // TODO não é só o mutation
         //PROBLEM 
         problem = SnakeProblem.buildProblemFromFile(new File(getParameterValue("Problem file")),tipo);
 
@@ -114,7 +114,7 @@ public class SnakeExperimentsFactory extends ExperimentsFactory {
         }
         return null;
     }
-//todo qualquercoisa
+
     private String buildTextualExperiment() {
         StringBuilder sb = new StringBuilder();
         sb.append("Population size:" + populationSize + "\t");

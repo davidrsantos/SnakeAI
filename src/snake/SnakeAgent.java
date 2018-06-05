@@ -5,6 +5,9 @@ package snake;
 
 public abstract class SnakeAgent {
 
+
+
+    public int numeroComidas;
     protected Cell cell;
     protected Color color;
     public Environment environment;
@@ -17,6 +20,7 @@ public abstract class SnakeAgent {
         }
         this.color = color;
         this.environment = environment;
+        this.numeroComidas=0;
     }
 
 
@@ -55,6 +59,8 @@ public abstract class SnakeAgent {
                 Tail tail = new Tail(cell);
                 tails.addFirst(tail);
                 environment.setNumComidas();
+
+                numeroComidas++;
             } else {
                 if (!tails.isEmpty()) {
                     tails.addFirst(new Tail(cell));
@@ -100,5 +106,8 @@ public abstract class SnakeAgent {
             t.getCell().setTail(null);
         }
         tails.clear();
+    }
+    public int getNumeroComidas() {
+        return numeroComidas;
     }
 }

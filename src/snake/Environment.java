@@ -1,5 +1,6 @@
 package snake;
 
+import snake.snakeAI.SnakeProblem;
 import snake.snakeAI.nn.SnakeAIAgent;
 import snake.snakeAI.nn.SnakeAIAgent1;
 import snake.snakeAdhoc.SnakeAdhocAgent;
@@ -23,6 +24,8 @@ public class Environment {
     private boolean stop;
     protected int numMovimentos;
     protected int numComidas;
+    public int numeroComidaAgente1;
+    public int numeroComidaAgente2;
     private int numInputs;
     private int numOutputs;
     private int numHiddenUnits;
@@ -87,20 +90,22 @@ public class Environment {
                 agents.add(snakeAIAgent);
 
                 break;
-            case 3://todo confirmar com a professora
+            case 3:
                 //duas cobras iguais
                 SnakeAIAgent snakeAIAgent1 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent1);
 
                 SnakeAIAgent snakeAIAgent2 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent2);
-            case 4://todo duas cobras diferentes
+                break;
+            case 4://Duas Cobras diferentes
+
                 SnakeAIAgent snakeAIAgent3 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent3);
 
                 SnakeAIAgent1 snakeAIAgent4 = new SnakeAIAgent1(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent4);
-            //todo para duas cobras diferente tem de ser um setweiths diferente que tenha o tamanho para duas e que depois separaremos 0 até x para a primeira e x até ao ultimo para outra
+                break;
         }
         //melhorar a existencia.
         //adicionar outra AI Snake com resultados diferente
@@ -126,15 +131,23 @@ public class Environment {
         stop=false;
         numMovimentos=0;
         numComidas=0;
+        numeroComidaAgente1 = 0;
+        numeroComidaAgente2 = 0;
         int i;
         for ( i = 0; i < maxIterations && !stop; i++) {
             //System.out.println(i + 1);
 
             for (SnakeAgent agent : agents) {
                 agent.act(this);
+
                 fireUpdatedEnvironment();   //redesenha o painel
             }
-        }
+            if(tipo == 4) {
+                numeroComidaAgente1 = agents.get(0).getNumeroComidas();
+                numeroComidaAgente2 = agents.get(1).getNumeroComidas();
+            }
+            }
+
         numMovimentos=i;
     }
 
@@ -217,15 +230,37 @@ public class Environment {
 
 
 
-    public void setWeights(double[] genome) {//todo confirmar com a professora
+    public void setWeights(double[] genome) {
+
         for (SnakeAgent agent : agents) {
             if(agent instanceof SnakeAIAgent)
                 ((SnakeAIAgent) agent).setWeights(genome);
             if(agent instanceof SnakeAIAgent1)
                 ((SnakeAIAgent1) agent).setWeights(genome);
-            //fazer outro
+            }
         }
+
+
+    public void setWeightsEspecial(double[] genomeDuplo) {
+        double[] genome1 = new double[genomeDuplo.length / 2];
+        double[] genome2 = new double[genomeDuplo.length / 2];
+
+
+        System.arraycopy(genomeDuplo,0,genome1,0,genome1.length);
+        System.arraycopy(genomeDuplo,genomeDuplo.length / 2, genome2,0,genome2.length);
+
+
+        ((SnakeAIAgent) agents.get(0)).setWeights(genome1);
+       ((SnakeAIAgent1) agents.get(1)).setWeights(genome2);
+
+        System.out.println("Genoma Duplo = " + genomeDuplo.toString());
+        System.out.println("Genoma 1 = " + genome1.toString());
+        System.out.println("Genoma 2 = " + genome2.toString());
     }
+
+
+
+
     public int getComidas() {
         return numComidas;
     }
@@ -233,4 +268,6 @@ public class Environment {
     public int getMovimentos() {
         return numMovimentos;
     }
+
+
 }

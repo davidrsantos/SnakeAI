@@ -1,5 +1,5 @@
 package snake.snakeAI.ga;
-//
+
 public abstract class RealVectorIndividual<P extends Problem, I extends RealVectorIndividual> extends Individual<P, I> {
     // TODO verificar
 
@@ -8,13 +8,13 @@ public abstract class RealVectorIndividual<P extends Problem, I extends RealVect
 
     public RealVectorIndividual(P problem, int size) {
         super(problem);
-        // TODO este muda referente a ficha o genoma é constituido por pesos, na ficha é 01has
+
         genome = new double[size];
         for (int g = 0; g < genome.length; g++) {
-            //todo aplicar abaixo mas em real!!!
-            genome[g]= 2 * GeneticAlgorithm.random.nextDouble() - 1; // todo estamos a preencher o vetor com valores entre -1 e 1
 
+            genome[g]= 2 * GeneticAlgorithm.random.nextDouble() - 1; //
         }
+
     }
 
     public RealVectorIndividual(RealVectorIndividual<P, I> original) {

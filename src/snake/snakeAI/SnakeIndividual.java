@@ -6,6 +6,9 @@ import snake.snakeAI.ga.RealVectorIndividual;
 public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeIndividual> {
     private int numComidas;
    private int numMovimentos;
+    private int comidaAgente1;
+    private int comidaAgente2;
+    boolean tipo4;
 //declarar o numero de comidas e mov e mostrar com o tostring para ter uma nocao
     public SnakeIndividual(SnakeProblem problem, int size ) {
         super(problem, size);
@@ -27,23 +30,31 @@ public class SnakeIndividual extends RealVectorIndividual<SnakeProblem, SnakeInd
        numMovimentos=0;
        fitness=0;
         for(int i=0;i<numeroSimulacoes;i++){
-            Environment environment = problem.getEnvironment();
-            environment.initialize(i);
-            environment.setWeights(genome);
-            environment.simulate();
 
+            Environment environment = problem.getEnvironment();
+
+
+            environment.initialize(i);
+            if (environment.tipo == 4) {
+                environment.setWeightsEspecial(genome);
+                 tipo4 = true;
+            }else{
+                environment.setWeights(genome);
+            }
+
+            environment.simulate();
+            comidaAgente1 += environment.numeroComidaAgente1;
+            comidaAgente2 += environment.numeroComidaAgente2;
             numComidas += environment.getComidas();
             numMovimentos += environment.getMovimentos();
-
-
-
-            //se tiver essas var no ambient colocar sempre a 0 em cada interaçao
-
         }
-      //  System.out.println("numero comidas ="+ numComidas);
-        //System.out.println("numero move ="+ numMovimentos);
-        fitness = numComidas*10000+numMovimentos;
-        //System.out.println(fitness);
+        if (tipo4== true) {
+            fitness =( numComidas -(comidaAgente1*50 -comidaAgente2*50) )* 10000 + numMovimentos;
+            //todo fazer a as comidas * 1000 - a diferenças das duas +10
+        }else {
+
+            fitness = numComidas * 10000 + numMovimentos;
+        }
         return fitness;
     }
 

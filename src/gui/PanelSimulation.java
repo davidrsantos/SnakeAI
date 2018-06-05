@@ -20,7 +20,7 @@ public class PanelSimulation extends JPanel implements EnvironmentListener {
     JPanel environmentPanel = new JPanel();
     private Environment environment;
     private Image image;
-    SwingWorker worker;
+    private SwingWorker worker;
 
     public PanelSimulation(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
@@ -45,12 +45,12 @@ public class PanelSimulation extends JPanel implements EnvironmentListener {
     }
 
     public void jButtonSimulate_actionPerformed(ActionEvent e) {
-if (worker != null){
-    worker.cancel(true);
-    worker=null;
-    environment.removeEnvironmentListener(this);
-    return;
-}
+        if (worker != null){
+            worker.cancel(true);
+            worker=null;
+            environment.removeEnvironmentListener(this);
+            return;
+        }
 
         environment = mainFrame.getProblem().getEnvironment();
         environment.addEnvironmentListener(this);
@@ -67,11 +67,11 @@ if (worker != null){
                 for (int i = 0; i < environmentSimulations; i++) {
                     environment.initialize(i);
                     environmentUpdated();
-                    if(environment.tipo==2){
+                    if(environment.tipo==2 || environment.tipo == 3){
                         environment.setWeights(mainFrame.getBestInRun().getGenome());
                     }
-                    if(environment.tipo==3){//todo confirmar com a professora
-                        environment.setWeights(mainFrame.getBestInRun().getGenome());
+                    if(environment.tipo ==4){
+                        environment.setWeightsEspecial(mainFrame.getBestInRun().getGenome());
                     }
                     environment.simulate();
                 }
