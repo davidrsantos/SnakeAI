@@ -278,6 +278,7 @@ public class MainFrame extends JFrame implements GAListener {
                             Experiment experiment = experimentsFactory.nextExperiment(tipo);
                             experiment.run();
 
+
                         } catch (IOException e1) {
                             e1.printStackTrace(System.err);
                         }

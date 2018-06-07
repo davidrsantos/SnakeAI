@@ -13,6 +13,7 @@ public class Experiment<E extends ExperimentsFactory, P extends Problem> {
     private final int numRuns;
     private final P problem;
     private final String textualRepresentation;
+    private int contExperiencias=0;
     //listeners
     final private List<ExperimentListener> listeners = new ArrayList<>(10);
     private GeneticAlgorithm ga;
@@ -34,6 +35,8 @@ public class Experiment<E extends ExperimentsFactory, P extends Problem> {
         }
         System.out.println("----------------------------");
         fireExperimentEnded();
+        contExperiencias++;
+        System.out.println("Foi a experiencia numero: " + contExperiencias);
         System.out.println("--------------Cuidado Não Fechar Este Main--------------");
     }
 

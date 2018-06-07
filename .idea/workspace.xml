@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40253db5-b36c-4e1b-883d-01a561f9d7d3" name="Default" comment="Completo">
+    <list default="true" id="40253db5-b36c-4e1b-883d-01a561f9d7d3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DataSets/DataSetHetero.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainFrame.java" afterPath="$PROJECT_DIR$/src/gui/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/PanelParameters.java" afterPath="$PROJECT_DIR$/src/gui/PanelParameters.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/Environment.java" afterPath="$PROJECT_DIR$/src/snake/Environment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/SnakeAgent.java" afterPath="$PROJECT_DIR$/src/snake/SnakeAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java" afterPath="$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/snakeAI/SnakeIndividual.java" afterPath="$PROJECT_DIR$/src/snake/snakeAI/SnakeIndividual.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java" afterPath="$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent.java" afterPath="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent1.java" afterPath="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent1.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,16 +30,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SnakeAIAgent1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="113" column="74" lean-forward="true" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -98,8 +80,8 @@
       <file leaf-file-name="Experiment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            <state relative-caret-position="232">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +112,18 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="232" column="65" lean-forward="false" selection-start-line="232" selection-start-column="65" selection-end-line="232" selection-end-column="65" />
+            <state relative-caret-position="504">
+              <caret line="255" column="54" lean-forward="false" selection-start-line="255" selection-start-column="54" selection-end-line="255" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SnakeExperimentsFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1176">
+              <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -167,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/snake/snakeAI/ga/RealVectorIndividual.java" />
         <option value="$PROJECT_DIR$/src/gui/PanelSimulation.java" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/SnakeProblem.java" />
-        <option value="$PROJECT_DIR$/src/gui/MainFrame.java" />
         <option value="$PROJECT_DIR$/DataSets/DataSet1.txt" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent2.java" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent.java" />
@@ -175,12 +166,13 @@
         <option value="$PROJECT_DIR$/src/snake/snakeAI/SubSnakeIndividual.java" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/nn/SnakeAIAgent1.java" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java" />
-        <option value="$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/gui/PanelParameters.java" />
         <option value="$PROJECT_DIR$/src/snake/SnakeAgent.java" />
         <option value="$PROJECT_DIR$/src/snake/Environment.java" />
         <option value="$PROJECT_DIR$/src/snake/snakeAI/SnakeIndividual.java" />
+        <option value="$PROJECT_DIR$/src/gui/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java" />
       </list>
     </option>
   </component>
@@ -303,6 +295,69 @@
               <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="ButtonDataSet_actionAdapter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="ButtonExperiments_actionAdapter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="ButtonRun_actionAdapter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="ButtonRunExperiments_actionAdapter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="ButtonStop_actionAdapter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="MainFrame" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeAI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainFrame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="PanelTextArea" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="SnakeAI" type="b2602c69:ProjectViewProjectNode" />
@@ -564,7 +619,7 @@
       <updated>1527627691031</updated>
       <workItem from="1527627705078" duration="1429000" />
       <workItem from="1528206057757" duration="19405000" />
-      <workItem from="1528314082776" duration="13053000" />
+      <workItem from="1528314082776" duration="14895000" />
     </task>
     <task id="LOCAL-00003" summary="já implementei as duas snakes iguais">
       <created>1528147845234</created>
@@ -587,11 +642,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528158295324</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Completo">
+      <created>1528378014180</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1528378014180</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49944000" />
+    <option name="totallyTimeSpent" value="51786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,6 +666,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
@@ -613,15 +676,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23814774" sideWeight="0.52132195" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43770674" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58324146" sideWeight="0.47867805" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43770674" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.47867805" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19029851" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.491731" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4366042" sideWeight="0.4936034" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4366042" sideWeight="0.4936034" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -886,14 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Downloads/snakeindividual2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1051,16 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/ExperimentEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1098,10 +1143,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/SnakeExperimentsFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1176">
+          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snake/snakeAI/ga/experiments/Experiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="232" column="65" lean-forward="false" selection-start-line="232" selection-start-column="65" selection-end-line="232" selection-end-column="65" />
+        <state relative-caret-position="504">
+          <caret line="255" column="54" lean-forward="false" selection-start-line="255" selection-start-column="54" selection-end-line="255" selection-end-column="54" />
           <folding />
         </state>
       </provider>
