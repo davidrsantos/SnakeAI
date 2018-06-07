@@ -37,3 +37,8 @@ colocar mutacoes 0.01,0.05
 recombiação
 0.7,0.9
 //no relatório: introducao a algoritmos geneticos e redes neuronais e referencias. explicar como a cauda foi feita
+
+
+
+Usar População 50  para a snake Alone
+        População 150 para Snakes Heterogenias

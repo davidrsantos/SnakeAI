@@ -19,14 +19,14 @@ public class PanelParameters extends PanelAtributesValue {
 
     // TODO MODIFY TO CHANGE THE DEFAULT PARAMETER VALUES
     public static final String SEED = "1";
-    public static final String POPULATION_SIZE = "200";
-    public static final String GENERATIONS = "1000";
-    public static final String TOURNAMENT_SIZE = "4";
-    public static final String PROB_RECOMBINATION = "0.7";
+    public static final String POPULATION_SIZE = "50";
+    public static final String GENERATIONS = "300";
+    public static final String TOURNAMENT_SIZE = "8";
+    public static final String PROB_RECOMBINATION = "0.85";
     public static final String PROB_MUTATION = "0.01";
 
     //para a combobox
-    String[] selectionProblems = {"Snake Random", "Snake AdHoc", "SnakeIA", "SnakeIATwins", "SnakeIANotAlike"};//TODO faltam os resto dos algoritmos
+    String[] selectionProblems = {"Snake Random", "Snake AdHoc", "SnakeIA", "DoubleSnakeIAHomogeneous", "DoubleSnakeIAHeterogeneous", "SnakeAIDump"};//TODO faltam os resto dos algoritmos
     JComboBox comboBoxSelectionProblems = new JComboBox(selectionProblems);
     String[] selectionMutation = {"Random", "Uniforme"};
     JComboBox comboBoxMutationMethods = new JComboBox(selectionMutation);
@@ -94,7 +94,9 @@ public class PanelParameters extends PanelAtributesValue {
     }
 
     public void actionPerformedSelectionProblems(ActionEvent e) {
+
         mainFrame.setTipo(comboBoxSelectionProblems.getSelectedIndex());
+
     }
 
 
@@ -135,8 +137,6 @@ public class PanelParameters extends PanelAtributesValue {
                 return new MutationRandom<>(mutationProbability/*TODO?*/);
             case 1:
                 return new MutationUniform<>(mutationProbability/*TODO?*/);
-//            case 2:
-//                return new RecombinationUniform<>(recombinationProb);
         }
         return null;
 

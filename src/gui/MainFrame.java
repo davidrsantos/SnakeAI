@@ -42,7 +42,7 @@ public class MainFrame extends JFrame implements GAListener {
     private XYSeries seriesBestIndividual;
     private XYSeries seriesAverage;
     private SwingWorker<Void, Void> worker;
-    private int tipo;
+    private int tipo= panelParameters.comboBoxSelectionProblems.getSelectedIndex();
 
     public void setTipo(int tipo) {
         this.tipo = tipo;
@@ -193,6 +193,7 @@ public class MainFrame extends JFrame implements GAListener {
                     panelParameters.getSelectionMethod(),
                     panelParameters.getRecombinationMethod(),
                     panelParameters.getMutationMethod(),
+
                     random);
 
             System.out.println(ga);
@@ -294,6 +295,7 @@ public class MainFrame extends JFrame implements GAListener {
             }
         };
         worker.execute();
+
     }
 
     @Override

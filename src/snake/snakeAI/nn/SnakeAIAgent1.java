@@ -36,7 +36,7 @@ public class SnakeAIAgent1 extends SnakeAgent {
             int inputLayerSize,
             int hiddenLayerSize,
             int outputLayerSize, Environment environment) {
-        super(cell, Color.BLUE, environment);
+        super(cell, Color.ORANGE, environment);
         this.inputLayerSize = inputLayerSize;
         this.hiddenLayerSize = hiddenLayerSize;
         this.outputLayerSize = outputLayerSize;
@@ -123,6 +123,7 @@ public class SnakeAIAgent1 extends SnakeAgent {
 
 
 //todo luana retirar inputs
+
         if(perception.getN() !=null && !perception.getN().hasTail())
             inputs[0]=1;
         else inputs[0]=0;
@@ -184,6 +185,7 @@ public class SnakeAIAgent1 extends SnakeAgent {
         if (environment.getFood().getCell().getColumn() < cell.getColumn())
             inputs[15]=1;
         else inputs[15]=0;
+
     forwardPropagation();
 
         if(output[0]==1)

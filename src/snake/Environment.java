@@ -1,6 +1,5 @@
 package snake;
 
-import snake.snakeAI.SnakeProblem;
 import snake.snakeAI.nn.SnakeAIAgent;
 import snake.snakeAI.nn.SnakeAIAgent1;
 import snake.snakeAdhoc.SnakeAdhocAgent;
@@ -30,9 +29,6 @@ public class Environment {
     private int numOutputs;
     private int numHiddenUnits;
 
-    public void setNumComidas() {
-        this.numComidas++;
-    }
 
     public Environment(
             int size,
@@ -65,27 +61,28 @@ public class Environment {
 
         }
         agents.clear();
-        if (food != null){
+        if (food != null) {
             food.getCell().setFood(null);
             food = null;
-    }
+        }
         placeAgents();
         placeFood();
     }
 
     private void placeAgents() {
+        agents.clear();
         switch (tipo) {
 
             case 0:
-                   SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
-                   agents.add(snakeRandomAgent);
+                SnakeRandomAgent snakeRandomAgent = new SnakeRandomAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
+                agents.add(snakeRandomAgent);
                 break;
             case 1:
                 SnakeAdhocAgent snakeAdhocAgent = new SnakeAdhocAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), Color.GREEN, this);
                 agents.add(snakeAdhocAgent);
                 break;
             case 2:
-            //só uma cobra
+                //só uma cobra
                 SnakeAIAgent snakeAIAgent = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
                 agents.add(snakeAIAgent);
 
@@ -101,11 +98,16 @@ public class Environment {
             case 4://Duas Cobras diferentes
 
                 SnakeAIAgent snakeAIAgent3 = new SnakeAIAgent(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
-                agents.add(snakeAIAgent3);
+                agents.add(snakeAIAgent3); //Azul
 
                 SnakeAIAgent1 snakeAIAgent4 = new SnakeAIAgent1(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
-                agents.add(snakeAIAgent4);
+                agents.add(snakeAIAgent4); // Laranja
+
                 break;
+            case 5://segunda Snake
+
+                SnakeAIAgent1 snakeAIAgentDumb = new SnakeAIAgent1(getCell(random.nextInt(grid.length), random.nextInt(grid.length)), numInputs, numHiddenUnits, numOutputs, this);
+                agents.add(snakeAIAgentDumb);
         }
         //melhorar a existencia.
         //adicionar outra AI Snake com resultados diferente
@@ -113,13 +115,13 @@ public class Environment {
     }
 
     public void placeFood() {
-        int l,c;
+        int l, c;
         Cell cell;
         do {
-            l=random.nextInt(grid.length);
-            c=random.nextInt(grid.length);
-            cell=getCell(l,c);
-        }while (cell.hasAgent() || cell.hasTail());
+            l = random.nextInt(grid.length);
+            c = random.nextInt(grid.length);
+            cell = getCell(l, c);
+        } while (cell.hasAgent() || cell.hasTail());
 
         food = new Food(cell);
     }
@@ -127,14 +129,15 @@ public class Environment {
     public Food getFood() {
         return food;
     }
+
     public void simulate() {
-        stop=false;
-        numMovimentos=0;
-        numComidas=0;
+        stop = false;
+        numMovimentos = 0;
+        numComidas = 0;
         numeroComidaAgente1 = 0;
         numeroComidaAgente2 = 0;
         int i;
-        for ( i = 0; i < maxIterations && !stop; i++) {
+        for (i = 0; i < maxIterations && !stop; i++) {
             //System.out.println(i + 1);
 
             for (SnakeAgent agent : agents) {
@@ -142,13 +145,14 @@ public class Environment {
 
                 fireUpdatedEnvironment();   //redesenha o painel
             }
-            if(tipo == 4) {
-                numeroComidaAgente1 = agents.get(0).getNumeroComidas();
-                numeroComidaAgente2 = agents.get(1).getNumeroComidas();
-            }
-            }
+            if (tipo == 4) {
+                numeroComidaAgente1 = agents.get(0).getNumeroComidas(); //Azul
+                numeroComidaAgente2 = agents.get(1).getNumeroComidas(); // Laranja
 
-        numMovimentos=i;
+            }
+        }
+
+        numMovimentos = i;
     }
 
     public int getSize() {
@@ -199,9 +203,6 @@ public class Environment {
         return grid[linha][coluna].getColor();
     }
 
-    public boolean isStop() {
-        return stop;
-    }
 
     public void setStop(boolean stop) {
         this.stop = stop;
@@ -224,21 +225,17 @@ public class Environment {
         }
     }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
-
 
 
     public void setWeights(double[] genome) {
 
         for (SnakeAgent agent : agents) {
-            if(agent instanceof SnakeAIAgent)
+            if (agent instanceof SnakeAIAgent)
                 ((SnakeAIAgent) agent).setWeights(genome);
-            if(agent instanceof SnakeAIAgent1)
+            if (agent instanceof SnakeAIAgent1)
                 ((SnakeAIAgent1) agent).setWeights(genome);
-            }
         }
+    }
 
 
     public void setWeightsEspecial(double[] genomeDuplo) {
@@ -246,24 +243,24 @@ public class Environment {
         double[] genome2 = new double[genomeDuplo.length / 2];
 
 
-        System.arraycopy(genomeDuplo,0,genome1,0,genome1.length);
-        System.arraycopy(genomeDuplo,genomeDuplo.length / 2, genome2,0,genome2.length);
+        System.arraycopy(genomeDuplo, 0, genome1, 0, genome1.length);
+        System.arraycopy(genomeDuplo, genomeDuplo.length / 2, genome2, 0, genome2.length);
 
 
         ((SnakeAIAgent) agents.get(0)).setWeights(genome1);
-       ((SnakeAIAgent1) agents.get(1)).setWeights(genome2);
-
-        System.out.println("Genoma Duplo = " + genomeDuplo.toString());
-        System.out.println("Genoma 1 = " + genome1.toString());
-        System.out.println("Genoma 2 = " + genome2.toString());
+        ((SnakeAIAgent1) agents.get(1)).setWeights(genome2);
     }
 
 
+    public void setNumComidas() {
+        this.numComidas++;
+    }
 
 
     public int getComidas() {
         return numComidas;
     }
+
 
     public int getMovimentos() {
         return numMovimentos;

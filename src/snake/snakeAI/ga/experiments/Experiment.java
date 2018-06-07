@@ -1,5 +1,6 @@
 package snake.snakeAI.ga.experiments;
 
+//import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import snake.snakeAI.ga.GeneticAlgorithm;
 import snake.snakeAI.ga.Problem;
 
@@ -24,13 +25,16 @@ public class Experiment<E extends ExperimentsFactory, P extends Problem> {
     }
 
     public void run() {
+        System.out.println("--------------Experiemcias Iniciadas Cuidado Não Fechar Este Main--------------");
         for (int run = 0; run < numRuns; run++) {
             ga = factory.generateGAInstance(run + 1);
             ga.run(problem);
             System.out.println((run + 1) + " - " + ga.getBestInRun());
+            System.out.println("\n" + ga.toString());
         }
         System.out.println("----------------------------");
         fireExperimentEnded();
+        System.out.println("--------------Cuidado Não Fechar Este Main--------------");
     }
 
     public synchronized void addExperimentListener(ExperimentListener listener) {

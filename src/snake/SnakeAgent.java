@@ -1,5 +1,8 @@
 package snake;
 
+        import snake.snakeAI.nn.SnakeAIAgent;
+        import snake.snakeAI.nn.SnakeAIAgent1;
+
         import java.awt.*;
         import java.util.LinkedList;
 
@@ -59,7 +62,6 @@ public abstract class SnakeAgent {
                 Tail tail = new Tail(cell);
                 tails.addFirst(tail);
                 environment.setNumComidas();
-
                 numeroComidas++;
             } else {
                 if (!tails.isEmpty()) {

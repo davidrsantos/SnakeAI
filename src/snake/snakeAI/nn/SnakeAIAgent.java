@@ -183,6 +183,7 @@ public class SnakeAIAgent extends SnakeAgent {
         if (perception.getW() !=null && perception.getW().hasAgent())
             inputs[15]=1;
         else inputs[15]=0;
+
     forwardPropagation();
 
         if(output[0]==1)
